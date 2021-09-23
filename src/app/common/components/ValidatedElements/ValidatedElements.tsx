@@ -143,7 +143,7 @@ function ValidatedElements<T extends { [key: string]: IInput }, V>({
     for (const [key, input] of Object.entries(inputs)) {
       updatedInputs[key as keyof typeof inputs] = getValidatedInput({
         input,
-        value: input.value.toString(),
+        value: input?.value?.toString(),
         touched: true,
       }) as T[keyof T];
     }

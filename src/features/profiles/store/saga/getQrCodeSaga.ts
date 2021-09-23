@@ -9,6 +9,7 @@ import RNFS from 'react-native-fs';
 import { colors, sizes } from '~/src/app/common/constants';
 import RNQRGenerator, { QRCodeGenerateOptions } from 'rn-qr-generator';
 import { numberWithSpaces } from '../../../../app/utils/system';
+import { log, logline } from '~/src/app/utils/debug';
 
 interface IResult {
   qr: string;
@@ -23,7 +24,7 @@ function* getQrCode() {
     if (qr_data.length > 0 && qr_data[1]) {
       // Расшифровываем данные получение в виде qr  изображения
       const { values } = yield RNQRGenerator.detect({ base64: qr_data[1] });
-      // __DEV__ && console.log({ values });
+      logline('', { values });
 
       // Создаем стиль для нашего qr кода - размер, цвет
       const qrOptions: QRCodeGenerateOptions = {
@@ -52,12 +53,15 @@ function* getQrCode() {
     yield put(cabinetDataFail(null));
   } catch (error) {
     yield put(cabinetDataFail(null));
-    __DEV__ && console.log('getQrCodeSaga', JSON.stringify(error, null, 4));
+    log('getQrCodeSaga', error);
     let [errors, message, allErrors] = getErrorStrings(error);
 
-    __DEV__ && console.log([errors, message, allErrors]);
+    log('', [errors, message, allErrors]);
 
-    const errorMessage = allErrors || message ? allErrors || message : 'Ошибка при получении qr кода';
+    const errorMessage =
+      allErrors || message
+        ? allErrors || message
+        : 'Ошибка при получении qr кода';
 
     yield showAlert('Ошибка', errorMessage);
   }

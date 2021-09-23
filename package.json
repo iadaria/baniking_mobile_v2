@@ -33,7 +33,7 @@
     "build-android-release": "cd android && ./gradlew assembleRelease && cd ../",
     "android-debug": "npx react-native run-android --variant=debug",
     "android-release": "npx react-native run-android --variant=release",
-    "android-uninstall": "adb uninstall \"com.baniking_mobile\"",
+    "android-uninstall": "adb uninstall \"com.baniking_mobile_v2\"",
     "ios-bundle": "react-native bundle --entry-file index.js --bundle-output ios/baniking_mobile/main.jsbundle --dev false --platform ios --assets-dest ios/baniking_mobile",
     "ios-release": "npx react-native run-ios --configuration Release",
     "ios-debug": "npx react-native run-ios --configuration Debug"
