@@ -9,8 +9,17 @@ target 'baniking_mobile_v2' do
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => false
+    :hermes_enabled => true
   )
+
+  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
+
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications"
+  pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary"
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
 
   target 'baniking_mobile_v2Tests' do
     inherit! :complete
