@@ -28,7 +28,7 @@ export default function SocialLogin({ socialLogin }: IProps) {
         title="VK"
         onPress={async () => {
           const auth = await VKLogin.login(['friends', 'photos', 'email']);
-          //__DEV__ && console.log(auth);
+          __DEV__ && console.log(auth);
         }}
       />
 
@@ -38,20 +38,16 @@ export default function SocialLogin({ socialLogin }: IProps) {
         style={{ width: 36, height: 36 }}
         onLoginFinished={(error, result) => {
           if (error) {
-            //__DEV__ && console.log('login has error: ' + result.error);
+            __DEV__ && console.log('login has error: ' + result.error);
           } else if (result.isCancelled) {
-            //__DEV__ && console.log('login is cancelled.');
+            __DEV__ && console.log('login is cancelled.');
           } else {
-            AccessToken.getCurrentAccessToken().then(
-              (data: AccessToken | null) => {
-                // __DEV__ && console.log(data?.accessToken.toString());
-              },
-            );
+            AccessToken.getCurrentAccessToken().then((data: AccessToken | null) => {
+              __DEV__ && console.log(data?.accessToken.toString());
+            });
           }
         }}
-        onLogoutFinished={() => {
-          //__DEV__ && console.log('logout.');
-        }}
+        onLogoutFinished={() => __DEV__ && console.log('logout.')}
       />
     </Block>
   );

@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { AuthLogo } from '~/src/assets';
 import RegisterForm from './RegisterForm';
-import SoialLoginBlock from '../components/SocialLoginBlock';
+//import SoialLoginBlock from '../components/SocialLoginBlock';
 import { styles } from './styles';
 import { KeyboardWrapper } from '~/src/app/common/components/KeyboardWrapper';
 import { IRootState } from '~/src/app/store/rootReducer';
@@ -56,7 +56,7 @@ function RegisterContainer({ navigation, phoneRegister, errors }: IProps) {
               errors={errors}
             />
             {/* Social login block */}
-            <SoialLoginBlock />
+            {/* <SoialLoginBlock /> */}
             {/* Sign in */}
             <Block row middle>
               <AppText primary center>

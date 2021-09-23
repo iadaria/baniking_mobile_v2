@@ -13,6 +13,10 @@ target 'baniking_mobile_v2' do
   )
 
   pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
 
   permissions_path = '../node_modules/react-native-permissions/ios'
   pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications"

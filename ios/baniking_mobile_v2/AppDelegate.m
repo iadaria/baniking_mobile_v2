@@ -4,6 +4,8 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
+#import <GoogleMaps/GoogleMaps.h>
+
 #if RCT_DEV
 #import <React/RCTDevLoadingView.h>
 #endif
@@ -43,6 +45,8 @@ static void InitializeFlipper(UIApplication *application) {
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"baniking_mobile_v2"
                                             initialProperties:nil];
+  
+  [GMSServices provideAPIKey:@"AIzaSyDQIRV22IWAK9G1JGMkC4pTwohS6iEG2Qk"];
 
   if (@available(iOS 13.0, *)) {
       rootView.backgroundColor = [UIColor systemBackgroundColor];

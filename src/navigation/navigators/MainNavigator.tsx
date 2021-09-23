@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-//import DrawerNavigator from './DrawerNavigator';
+import DrawerNavigator from './DrawerNavigator';
 import { connect } from 'react-redux';
+import { getCabinetData as getCabinetDataAction } from '~/src/features/profiles/store/profileActions';
 import { IRootState } from '~/src/app/store/rootReducer';
 import AuthNavigator from '~/src/features/auth/AuthNavigator';
 
 interface IProps {
   authenticated: boolean;
   points: number;
+  getCabinetData: () => void;
 }
 
 const Main = createStackNavigator();
 
-function MainNavigatorContainer({ authenticated }: IProps) {
+function MainNavigatorContainer({ authenticated, getCabinetData }: IProps) {
   useEffect(() => {
     if (authenticated) {
       // logline('[MainNavigator/useEffect/(authenticated === true)/getCabinetData]');
@@ -25,18 +27,17 @@ function MainNavigatorContainer({ authenticated }: IProps) {
 
   return (
     <Main.Navigator
-    //initialRouteName={authenticated ? 'DrawerNavigator' : 'AuthNavigator'}>
-    >
+      initialRouteName={authenticated ? 'DrawerNavigator' : 'AuthNavigator'}>
       <Main.Screen
         options={{ headerShown: false }}
         name="AuthNavigator"
         component={AuthNavigator}
       />
-      {/* <Main.Screen
+      <Main.Screen
         options={{ headerShown: false }}
         name="DrawerNavigator"
         component={DrawerNavigator}
-      /> */}
+      />
     </Main.Navigator>
   );
 }
@@ -46,5 +47,7 @@ export default connect(
     authenticated: auth.authenticated,
     points: system.header.points,
   }),
-  {},
+  {
+    getCabinetData: getCabinetDataAction,
+  },
 )(MainNavigatorContainer);

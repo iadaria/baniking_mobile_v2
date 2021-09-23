@@ -1,18 +1,18 @@
 import { all, take } from 'redux-saga/effects';
 import * as auth from '~/src/features/auth/store/saga';
-import * as permission from '~/src/app/store/permission/saga';
-/* import * as bath from '~/src/features/bathes/store/saga';
+import * as bath from '~/src/features/bathes/store/saga';
 import * as city from '~/src/features/cities/store/saga';
 import * as filter from '~/src/features/filters/store/saga';
 import * as map from '~/src/features/map/store/saga';
+import * as permission from '~/src/app/store/permission/saga';
 import * as preferences from '~/src/features/persist/store/saga';
 import * as profile from '~/src/features/profiles/store/saga';
-import * as settings from '~/src/features/settings/store/saga'; */
+import * as settings from '~/src/features/settings/store/saga';
 import { REHYDRATE } from 'redux-persist/lib/constants';
 
 const getListeners = (...args: any[]) =>
   args.reduce(
-    (acc, nextArg) => [...acc, ...Object.values(nextArg).map(func => func())],
+    (acc, nextArg) => [...acc, ...Object.values(nextArg).map((func) => func())],
     [],
   );
 
@@ -25,14 +25,14 @@ export default function* rootSaga() {
   yield all(
     getListeners(
       auth,
-      permission,
-      /* bath,
+      bath,
       city,
       filter,
       map,
+      permission,
       preferences,
       profile,
-      settings, */
+      settings,
     ),
   );
 }

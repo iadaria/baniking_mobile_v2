@@ -48,6 +48,9 @@ export default function DrawerNavigator({ navigation }: IScreenOptionsProps) {
       // https://reactnavigation.org/docs/4.x/drawer-navigator/#drawernavigatorconfig
       screenOptions={{
         unmountOnBlur: true,
+        headerShown: false,
+        drawerItemStyle: appDrawerItemStyle,
+        drawerStyle: appDrawerStyle(multiMargin),
         /* useImperativeHandle(
           ref,
           () => {
@@ -56,11 +59,7 @@ export default function DrawerNavigator({ navigation }: IScreenOptionsProps) {
           [input],
         ) */
       }}
-      drawerContentOptions={{
-        itemStyle: appDrawerItemStyle,
-      }}
-      drawerStyle={appDrawerStyle(multiMargin)}
-      drawerContent={(props) => <AppDrawerContent {...props} />}>
+      drawerContent={props => <AppDrawerContent {...props} />}>
       <Drawer.Screen
         name="ProfileTab"
         component={ProfileNavigator}

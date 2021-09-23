@@ -1,0 +1,78 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { ParamListBase } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { Block } from '~/src/app/common/components/UI';
+import {
+  isAndroid,
+  statusBarHeight,
+} from '~/src/app/common/constants/platform';
+import { IRootState } from '~/src/app/store/rootReducer';
+import { getCabinetData as getCabinetDataAction } from '~/src/features/profiles/store/profileActions';
+import { AppHeaderTitle } from '~/src/navigation/components/AppHeaderTitle';
+
+interface IAppScreenOptionsProps {
+  isBackward: boolean;
+  backwardStack: string[];
+  points: number;
+  isTransparent: boolean;
+  navigation: StackNavigationProp<ParamListBase>;
+  onCloseDrawer: (navigation: StackNavigationProp<ParamListBase>) => void;
+  onOpenDrawer: (navigation: StackNavigationProp<ParamListBase>) => void;
+  pullBackward: () => void;
+  onPress: () => void;
+}
+
+const AppHeaderContainer: React.FC<IAppScreenOptionsProps> = ({
+  isBackward,
+  backwardStack,
+  points,
+  navigation,
+  // route,
+  //isTransparent,
+  pullBackward,
+  onPress,
+}: IAppScreenOptionsProps) => {
+  let headerLeft;
+  if (isBackward && backwardStack.length > 0) {
+    headerLeft = (
+      <>
+        {/* <HeaderBackward
+        navigation={navigation}
+        backwardStack={backwardStack}
+        pullBackward={pullBackward}
+        onPress={onPress}
+      /> */}
+      </>
+    );
+  }
+
+  return (
+    <Block
+      style={{
+        paddingTop: isAndroid ? wp(5) : statusBarHeight * 1.3,
+        justifyContent: 'space-between',
+      }}
+      row>
+      {headerLeft}
+      <Block style={{ justifyContent: 'space-between' }} flex={0.44} center row>
+        <AppHeaderTitle points={points} />
+      </Block>
+    </Block>
+  );
+};
+
+const AppHeaderConnected = connect(
+  ({ system, auth }: IRootState) => ({
+    authenticated: auth.authenticated,
+    points: system.header.points,
+    // currentScreen: system.header.currentScreen,
+    isTransparent: system.header.isTransparent,
+  }),
+  {
+    getCabinetData: getCabinetDataAction,
+  },
+)(AppHeaderContainer);
+
+export { AppHeaderConnected as AppHeader };

@@ -1,33 +1,27 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import {
   LoginScreen,
-  /* RegisterScreen,
+  RegisterScreen,
   ResetPasswordScreen,
   VerifyScreen,
-  RegisterCompleteScreen, */
+  RegisterCompleteScreen,
 } from './screens';
 
 export default function AuthNavigator(): JSX.Element {
-  const Auth = createNativeStackNavigator();
+  const Auth = createStackNavigator();
   return (
     <Auth.Navigator
-      //initialRouteName="ResetPasswordScreen"
-      //initialRouteName="LoginScreen"
-      //initialRouteName="VerifyScreen"
-      //initialRouteName="LoginScreen"
-      //initialRouteName="RegisterCompleteScreen"
-      //initialRouteName="RegisterScreen"
+      initialRouteName="LoginScreen"
       screenOptions={{ headerShown: false }}>
-      {/* <Auth.Screen name="Screen" component={BaseSettingsScreen} /> */}
       <Auth.Screen name="LoginScreen" component={LoginScreen} />
-      {/* <Auth.Screen name="RegisterScreen" component={RegisterScreen} />
+      <Auth.Screen name="RegisterScreen" component={RegisterScreen} />
       <Auth.Screen
         name="RegisterCompleteScreen"
         component={RegisterCompleteScreen}
       />
       <Auth.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
-      <Auth.Screen name="VerifyScreen" component={VerifyScreen} /> */}
+      <Auth.Screen name="VerifyScreen" component={VerifyScreen} />
     </Auth.Navigator>
   );
 }

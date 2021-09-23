@@ -43,37 +43,39 @@ function arrayToQuery(name_array: string, array: any[]) {
 export const objToUrl = (obj: TObjToUrl) => {
   const result = obj
     ? `?${Object.keys(obj)
-        //.map((key) => `${key}=${Array.isArray(obj[key]) ? `"${String(obj[key])}"` : obj[key]}`)
-        .map(key =>
-          Array.isArray(obj[key])
-            ? arrayToQuery(key, obj[key] as any[])
-            : `${key}=${obj[key]}`,
-        )
-        .join('&')}`
+      //.map((key) => `${key}=${Array.isArray(obj[key]) ? `"${String(obj[key])}"` : obj[key]}`)
+      .map((key) =>
+        Array.isArray(obj[key])
+          ? arrayToQuery(key, obj[key] as any[])
+          : `${key}=${obj[key]}`,
+      )
+      .join('&')}`
     : '';
 
   //log('\n[api/index(objToUrl)]\n', result);
   return result;
 };
 
-const request =
-  (method: Methods, _endpoint: string | Function, entity: any) =>
-  async (data: null | any, params: any, headers?: any) => {
-    const endpoint =
-      typeof _endpoint === 'function' ? _endpoint(params) : _endpoint;
+const request = (
+  method: Methods,
+  _endpoint: string | Function,
+  entity: any,
+) => async (data: null | any, params: any, headers?: any) => {
+  const endpoint =
+    typeof _endpoint === 'function' ? _endpoint(params) : _endpoint;
 
-    try {
-      const res = await entity[method](endpoint, data, headers && { headers });
-      if (res.data && res.data.data) {
-        return { ...res.data.data, ...res.data.meta };
-      }
-      return res.data || res;
-    } catch (error) {
-      //log(`%c===> request error: ${method} ${endpoint || ''}\n`, error);
-
-      throw error.response || error;
+  try {
+    const res = await entity[method](endpoint, data, headers && { headers });
+    if (res.data && res.data.data) {
+      return { ...res.data.data, ...res.data.meta };
     }
-  };
+    return res.data || res;
+  } catch (error) {
+    //log(`%c===> request error: ${method} ${endpoint || ''}\n`, error);
+
+    throw error.response || error;
+  }
+};
 
 export const methods = {
   // User

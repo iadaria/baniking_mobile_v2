@@ -3,16 +3,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 // import storage from 'redux-persist/es/storage';
 import systemReducer, { ISystemState } from './system/systemReducer';
 import authReducer, { IAuthState } from '~/src/features/auth/store/authReducer';
-import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2';
-import permissionReducer, {
-  IPermissionState,
-} from './permission/permissionReducer';
-import { PersistConfig, persistReducer } from 'redux-persist';
-import { PersistPartial } from 'redux-persist/lib/persistReducer';
-import appPersistReducer, {
-  IPersistState,
-} from '~/src/features/persist/store/appPersistReducer';
-/* import profileReducer, {
+import profileReducer, {
   IProfileState,
 } from '~/src/features/profiles/store/profileReducer';
 import appPersistReducer, {
@@ -40,7 +31,7 @@ import mapReducer, { IMapState } from '~/src/features/map/store/mapReducer';
 import filterReducer, {
   IFilterState,
 } from '~/src/features/filters/store/filterReducer';
- */
+
 const persistConfig: PersistConfig<T> = {
   key: 'persist',
   storage: AsyncStorage,
@@ -52,13 +43,13 @@ export interface IRootState {
   auth: IAuthState;
   permission: IPermissionState;
   system: ISystemState;
-  /*  modal: IModalState;
+  modal: IModalState;
   profile: IProfileState;
   settings: ISettingsState;
   filter: IFilterState;
   bath: IBathState;
   city: ICityState;
-  map: IMapState; */
+  map: IMapState;
   persist: IPersistState & PersistPartial;
 }
 
@@ -66,13 +57,13 @@ const rootReducer = combineReducers<IRootState>({
   auth: authReducer,
   permission: permissionReducer,
   system: systemReducer,
-  /* modal: modalReducer,
+  modal: modalReducer,
   profile: profileReducer,
   settings: settingsReducer,
   filter: filterReducer,
   bath: bathReducer,
   city: cityReducer,
-  map: mapReducer,*/
+  map: mapReducer,
   persist: persistReducer(persistConfig, appPersistReducer),
 });
 

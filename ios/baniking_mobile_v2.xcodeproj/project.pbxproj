@@ -15,14 +15,14 @@
 		2E9423C7424E4AFA9E6228B0 /* TrajanPro3-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45E0735C4FFC4FBE9552B016 /* TrajanPro3-Regular.ttf */; };
 		2F77C6665CFE41A9959CA4FC /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1201D5C5CF8842059E4D4104 /* SFProText-Regular.ttf */; };
 		462BD34347A04F0EA0B8AB81 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6B3B9357399490AAC55E5BA /* Gilroy-Regular.ttf */; };
+		4EF2507EB582224F47F0C8D7 /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F1963429060B8CDDA3D92A /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a */; };
 		665C082773F54FCDB727689B /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32D05CB16DA84B1A91245D0D /* Gilroy-Light.ttf */; };
-		675CB21512E08F510DCA5F39 /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A26377330A4678ABEC105C /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a */; };
 		6DECADCA28EE481DA5152D6D /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6C6447FA1674ECCA96E5B3F /* Gilroy-SemiBold.ttf */; };
 		739BC43D7FDA49F8A6A14937 /* SegoeUI-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98DAD4B6E240437B8A987CFD /* SegoeUI-Light.ttf */; };
-		7AFFE31D9183407BC2E05D97 /* libPods-baniking_mobile_v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B20C0CD65E7BB4BFAB2660E /* libPods-baniking_mobile_v2.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		94FF27AB593D4D8FB187A0BB /* Gilroy-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F66414D85AE747409CEEEA93 /* Gilroy-UltraLight.ttf */; };
 		C0370A5BF68A46D79BBD5985 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 814A6AF264114C118760724B /* Gilroy-Bold.ttf */; };
+		C75D688A4E1E5BA4CDB3FA00 /* libPods-baniking_mobile_v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 360764142CB3C7DBEECD1A62 /* libPods-baniking_mobile_v2.a */; };
 		CE270AC781A84AB1A7DFF122 /* Gilroy-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8680443E97541E4A0F66771 /* Gilroy-LightItalic.ttf */; };
 		CF7B33204B3A4581B190FAA0 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B9EBDE6AF71421DB4EF9863 /* Gilroy-Medium.ttf */; };
 		D82D378801414B3FA51DEDE5 /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66E187CD58FF49E0B3D0E4B6 /* SFProText-Semibold.ttf */; };
@@ -43,7 +43,7 @@
 		00E356EE1AD99517003FC87E /* baniking_mobile_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = baniking_mobile_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* baniking_mobile_v2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = baniking_mobile_v2Tests.m; sourceTree = "<group>"; };
-		0B20C0CD65E7BB4BFAB2660E /* libPods-baniking_mobile_v2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-baniking_mobile_v2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C0A2A3E6D4098B6CC801BDB /* Pods-baniking_mobile_v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2.release.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2.release.xcconfig"; sourceTree = "<group>"; };
 		1201D5C5CF8842059E4D4104 /* SFProText-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Regular.ttf"; path = "../src/assets/fonts/SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* baniking_mobile_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baniking_mobile_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = baniking_mobile_v2/AppDelegate.h; sourceTree = "<group>"; };
@@ -53,19 +53,19 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = baniking_mobile_v2/main.m; sourceTree = "<group>"; };
 		1749F5D9CEE74A5C94B976D9 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProDisplay-Regular.ttf"; path = "../src/assets/fonts/SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		32D05CB16DA84B1A91245D0D /* Gilroy-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Light.ttf"; path = "../src/assets/fonts/Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		360764142CB3C7DBEECD1A62 /* libPods-baniking_mobile_v2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-baniking_mobile_v2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E0735C4FFC4FBE9552B016 /* TrajanPro3-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "TrajanPro3-Regular.ttf"; path = "../src/assets/fonts/TrajanPro3-Regular.ttf"; sourceTree = "<group>"; };
 		4B9EBDE6AF71421DB4EF9863 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Medium.ttf"; path = "../src/assets/fonts/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
-		59A26377330A4678ABEC105C /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BA46B915084691E12F921D8 /* Pods-baniking_mobile_v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2.debug.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2.debug.xcconfig"; sourceTree = "<group>"; };
+		64A82EC56C8FCE2AB60B87AD /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		66E187CD58FF49E0B3D0E4B6 /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Semibold.ttf"; path = "../src/assets/fonts/SFProText-Semibold.ttf"; sourceTree = "<group>"; };
-		66F3DA30C8DC6F02D1351940 /* Pods-baniking_mobile_v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2.release.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2.release.xcconfig"; sourceTree = "<group>"; };
 		7D688FF235584B2AADB49848 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-Light.ttf"; path = "../src/assets/fonts/Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 		814A6AF264114C118760724B /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Bold.ttf"; path = "../src/assets/fonts/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = baniking_mobile_v2/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8DF4C74B4BCD86C3883D40EA /* Pods-baniking_mobile_v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2.debug.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2.debug.xcconfig"; sourceTree = "<group>"; };
 		98DAD4B6E240437B8A987CFD /* SegoeUI-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SegoeUI-Light.ttf"; path = "../src/assets/fonts/SegoeUI-Light.ttf"; sourceTree = "<group>"; };
+		98F1963429060B8CDDA3D92A /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8680443E97541E4A0F66771 /* Gilroy-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-LightItalic.ttf"; path = "../src/assets/fonts/Gilroy-LightItalic.ttf"; sourceTree = "<group>"; };
-		B4EAA630C982109C0AAC561C /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C9AC2C578683C3F9ABCD6DBD /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E5A34538403E28F7046CFD73 /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig"; path = "Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F66414D85AE747409CEEEA93 /* Gilroy-UltraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-UltraLight.ttf"; path = "../src/assets/fonts/Gilroy-UltraLight.ttf"; sourceTree = "<group>"; };
 		F6B3B9357399490AAC55E5BA /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Regular.ttf"; path = "../src/assets/fonts/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675CB21512E08F510DCA5F39 /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a in Frameworks */,
+				4EF2507EB582224F47F0C8D7 /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AFFE31D9183407BC2E05D97 /* libPods-baniking_mobile_v2.a in Frameworks */,
+				C75D688A4E1E5BA4CDB3FA00 /* libPods-baniking_mobile_v2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,26 +143,26 @@
 			name = baniking_mobile_v2;
 			sourceTree = "<group>";
 		};
+		1E43EFCE941E326D898982B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DF4C74B4BCD86C3883D40EA /* Pods-baniking_mobile_v2.debug.xcconfig */,
+				0C0A2A3E6D4098B6CC801BDB /* Pods-baniking_mobile_v2.release.xcconfig */,
+				64A82EC56C8FCE2AB60B87AD /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig */,
+				E5A34538403E28F7046CFD73 /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				0B20C0CD65E7BB4BFAB2660E /* libPods-baniking_mobile_v2.a */,
-				59A26377330A4678ABEC105C /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a */,
+				360764142CB3C7DBEECD1A62 /* libPods-baniking_mobile_v2.a */,
+				98F1963429060B8CDDA3D92A /* libPods-baniking_mobile_v2-baniking_mobile_v2Tests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7A1DEFA6D6365D74295A85B6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5BA46B915084691E12F921D8 /* Pods-baniking_mobile_v2.debug.xcconfig */,
-				66F3DA30C8DC6F02D1351940 /* Pods-baniking_mobile_v2.release.xcconfig */,
-				B4EAA630C982109C0AAC561C /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig */,
-				C9AC2C578683C3F9ABCD6DBD /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -180,8 +180,8 @@
 				00E356EF1AD99517003FC87E /* baniking_mobile_v2Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				7A1DEFA6D6365D74295A85B6 /* Pods */,
 				08AE43918EEB42AEA8D5398C /* Resources */,
+				1E43EFCE941E326D898982B0 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -204,12 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "baniking_mobile_v2Tests" */;
 			buildPhases = (
-				B29ECF0DC642F3C68B8D899F /* [CP] Check Pods Manifest.lock */,
+				4FD8DFFF3712D5738CF47478 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				2564B73222EABF3CF98577DC /* [CP] Embed Pods Frameworks */,
-				AB9B7C3E7920E33468BB9241 /* [CP] Copy Pods Resources */,
+				FB4B8835A6F253F61F4629F5 /* [CP] Embed Pods Frameworks */,
+				9AE9C3512FD40AF1E6232941 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,14 +225,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "baniking_mobile_v2" */;
 			buildPhases = (
-				30D1C79541F631B132913EF7 /* [CP] Check Pods Manifest.lock */,
+				2EC7400A9EA35BDAC7BF3A5C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				50D5EDF9B25C22378789A848 /* [CP] Embed Pods Frameworks */,
-				DA3AE948979BEA67FCF57882 /* [CP] Copy Pods Resources */,
+				F74F72DFE87A9C2B24781DB7 /* [CP] Embed Pods Frameworks */,
+				9D9FF0B098C0BE0B3CBDEBAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,24 +326,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		2564B73222EABF3CF98577DC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30D1C79541F631B132913EF7 /* [CP] Check Pods Manifest.lock */ = {
+		2EC7400A9EA35BDAC7BF3A5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -365,41 +348,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50D5EDF9B25C22378789A848 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AB9B7C3E7920E33468BB9241 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B29ECF0DC642F3C68B8D899F /* [CP] Check Pods Manifest.lock */ = {
+		4FD8DFFF3712D5738CF47478 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -421,7 +370,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DA3AE948979BEA67FCF57882 /* [CP] Copy Pods Resources */ = {
+		9AE9C3512FD40AF1E6232941 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D9FF0B098C0BE0B3CBDEBAB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,6 +402,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F74F72DFE87A9C2B24781DB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2/Pods-baniking_mobile_v2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB4B8835A6F253F61F4629F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-baniking_mobile_v2-baniking_mobile_v2Tests/Pods-baniking_mobile_v2-baniking_mobile_v2Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -490,7 +490,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4EAA630C982109C0AAC561C /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig */;
+			baseConfigurationReference = 64A82EC56C8FCE2AB60B87AD /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -517,7 +517,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9AC2C578683C3F9ABCD6DBD /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig */;
+			baseConfigurationReference = E5A34538403E28F7046CFD73 /* Pods-baniking_mobile_v2-baniking_mobile_v2Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -541,7 +541,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BA46B915084691E12F921D8 /* Pods-baniking_mobile_v2.debug.xcconfig */;
+			baseConfigurationReference = 8DF4C74B4BCD86C3883D40EA /* Pods-baniking_mobile_v2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -567,7 +567,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66F3DA30C8DC6F02D1351940 /* Pods-baniking_mobile_v2.release.xcconfig */;
+			baseConfigurationReference = 0C0A2A3E6D4098B6CC801BDB /* Pods-baniking_mobile_v2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
