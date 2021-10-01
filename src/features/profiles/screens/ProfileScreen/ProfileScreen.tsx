@@ -229,7 +229,7 @@ function ProfileScreenContainer({
             placeholder="+7(___)___-__-__"
             maxLength={50}
             phone
-            mask="+7([000])[000]-[00]-[00]"
+            mask="+[0]([000])[000]-[00]-[00]"
             textFocus
             isScrollToFocused
           />

@@ -4,6 +4,7 @@ import { showAlert } from '~/src/app/common/components/showAlert';
 import { IOrderCallParams } from '~/src/app/models/bath';
 import { getErrorStrings } from '~/src/app/utils/error';
 import { ORDER_CALL } from '../bathConstants';
+import { log } from '~/src/app/utils/debug';
 
 interface IAction {
   type: string;
@@ -12,17 +13,17 @@ interface IAction {
 
 function* orderCallSaga({ payload }: IAction) {
   try {
-    __DEV__ && console.log('[orderCallSaga]', payload);
+    log('[orderCallSaga]', payload);
 
     // yield methods.orderCall(payload, null);
   } catch (e) {
-    __DEV__ && console.log(JSON.stringify(e, null, 4));
+    log('Error', e);
 
     let [errors, message] = getErrorStrings(e);
 
     //yield put(orderCallFail(errors));
 
-    __DEV__ && console.log('[sendProfileSettingsSaga]', [errors, message]);
+    log('[sendProfileSettingsSaga]', [errors, message]);
 
     const errorMessage = 'Ошибка отправки запроса';
 

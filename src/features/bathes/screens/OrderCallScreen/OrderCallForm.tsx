@@ -104,7 +104,7 @@ export default function OrderCallForm({
         id="phone"
         label="Телефон"
         placeholder="+7(___)___-__-__"
-        mask="+7([000])[000]-[00]-[00]"
+        mask="+[0]([000])[000]-[00]-[00]"
         onFocus={scrollToBlock.bind(null, 150)}
         phone
       />

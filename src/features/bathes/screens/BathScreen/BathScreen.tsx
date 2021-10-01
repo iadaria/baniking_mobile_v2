@@ -42,7 +42,7 @@ const Phone: React.FC<{ phone: string | null }> = ({ phone }) => {
       <TouchableOpacity
         style={styles.goldBorder}
         onPress={callPhone.bind(null, phone)}>
-        <AppText golder>Тест {formatPhoneNumber(phone)}</AppText>
+        <AppText golder>{formatPhoneNumber(phone)}</AppText>
       </TouchableOpacity>
     );
   }
@@ -196,7 +196,7 @@ function BathScreenContainer({
     return <AppActivityIndicator />;
   }
 
-  const map = maps.find((m) => m.bathId === bath.id);
+  const map = maps.find(m => m.bathId === bath.id);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>

@@ -6,10 +6,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import { ParamListBase, Route, useFocusEffect } from '@react-navigation/native';
+import { ParamListBase, Route } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { BlurView } from '@react-native-community/blur';
-import { transparentHeader as transparentHeaderAction } from '~/src/app/store/system/systemActions';
 import { getProfileSettings as getProfileSettingsAction } from '~/src/features/profiles/store/profileActions';
 import {
   initOrderCallInputs as initOrderCallInputsAction,
@@ -95,7 +94,7 @@ function OrderCallScreenContainer({
               if (navigation.canGoBack()) {
                 navigation.goBack();
               } else {
-                navigation.navigate(routes.bathesTab.BathScreen);
+                navigation.navigate(routes.bathesTab.Bath);
               }
             }}>
             <CloseWhiteIcon />
