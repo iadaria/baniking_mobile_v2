@@ -37,7 +37,6 @@ const LoginFormContainer = ({
   const valuesRef = React.useRef<LoginPhonePayload>();
 
   const handleEmailLogin = async () => {
-    logline('LoginForm', 'login');
     if (valuesRef.current) {
       const device_name = await DeviceInfo.getDeviceName();
       const formatedPhone = phoneFormat(valuesRef.current.phone);

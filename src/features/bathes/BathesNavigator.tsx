@@ -15,7 +15,7 @@ export default function BathesNavigator() {
 
   return (
     <Bathes.Navigator
-      initialRouteName={tab.SelectCity}
+      //initialRouteName={tab.SelectCity}
       screenOptions={{ headerShown: false, headerMode: 'screen' }}>
       <Bathes.Screen name={tab.Bathes} component={BathesScreen} />
       <Bathes.Screen name={tab.SelectCity} component={SelectCityScreen} />
