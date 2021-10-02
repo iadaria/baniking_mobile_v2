@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '~/src/app/common/constants';
+import { colors, multiplier } from '~/src/app/common/constants';
 
 export const styles = StyleSheet.create({
   form: {
@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
   },
   citiesList: {
-    height: '63%',
+    height: String(63 * multiplier) + '%',
   },
   icon: {
     position: 'absolute',

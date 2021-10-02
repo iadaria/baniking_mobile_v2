@@ -11,6 +11,7 @@ import { GOOGLE_API } from 'react-native-dotenv';
 import { DETECT_CITY } from '../mapConstants';
 import { upFirstLetter } from '~/src/app/utils/string';
 import { log, logline } from '~/src/app/utils/debug';
+import { ICityState } from '~/src/features/cities/store/cityReducer';
 
 export type DetectCityParams = {
   latlng: string;
@@ -34,6 +35,7 @@ function* detectCitySaga(_: IAction) {
   logline('\n\n[detectCitySage]', '***');
   try {
     const { location }: IMapState = yield select(({ map }: IRootState) => map);
+    const { cities }: ICityState = yield select(({ city }: IRootState) => city);
     if (location) {
       const { lat, lng } = location;
       const params: DetectCityParams = {
@@ -45,16 +47,24 @@ function* detectCitySaga(_: IAction) {
       };
       yield put(mapRequest());
       const r: IResult = yield methods.detectCityByLocation(null, params);
-      const city = r.results[0].address_components[0].short_name
+      let city = r.results[0].address_components[0].short_name
         .toLowerCase()
         .trim();
+      //const city = 'Коробово'; // need del
       // ask user
       yield showAlert(
         'Определение местоположения',
         `Ваш город ${upFirstLetter(city)}?`,
         'OK',
         yield () => {
-          put(store.dispatch(selectCity(city)));
+          const selectedCity = cities.find(({ id, name }) =>
+            [id, name].includes(city),
+          );
+          if (selectedCity) {
+            put(store.dispatch(selectCity(city)));
+          } else {
+            showAlert('Выбор города', `Город ${city} в списке не найден`);
+          }
         },
         () => {},
       );
