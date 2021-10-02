@@ -78,7 +78,7 @@ export default function DrawerNavigator({ navigation }: IScreenOptionsProps) {
           ),
         }}
       />
-      <Drawer.Screen
+      {/*  <Drawer.Screen
         name="MeetingsTab"
         component={MeetingsNavigator}
         options={{
@@ -86,8 +86,8 @@ export default function DrawerNavigator({ navigation }: IScreenOptionsProps) {
             <AppDrawerItem text="Собрания" {...props} />
           ),
         }}
-      />
-      <Drawer.Screen
+      /> */}
+      {/*  <Drawer.Screen
         name="ReceiptsTab"
         component={ReceiptsNavigator}
         options={{
@@ -95,7 +95,7 @@ export default function DrawerNavigator({ navigation }: IScreenOptionsProps) {
             <AppDrawerItem text="Чеки" {...props} />
           ),
         }}
-      />
+      /> */}
       <Drawer.Screen
         name="SettingsTab"
         component={SettingsNavigator}
