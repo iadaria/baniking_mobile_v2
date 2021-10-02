@@ -57,14 +57,14 @@ function ValidatedElements<T extends { [key: string]: IInput }, V>({
 
   useEffect(() => {
     return () => {
-      logline('[ValidatedElements/useEffect/timeIds change]', timeIds);
+      //logline('[ValidatedElements/useEffect/timeIds change]', timeIds);
       timeIds.forEach((timeId: NodeJS.Timeout) => clearTimeout(timeId));
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    log(`[ValidateElements/${nameForm || ''}/useEffect]`, inputs);
+    //log(`[ValidateElements/${nameForm || ''}/useEffect]`, inputs);
 
     let _isErrors = false; // предположим - ошибок нет
     let whatError: string | null = null;
@@ -89,10 +89,10 @@ function ValidatedElements<T extends { [key: string]: IInput }, V>({
 
     !_isErrors && _allRequired && setIsErrors(false);
 
-    const cv =
+    /* const cv =
       `[ValidatedElements/searchErrors] isErrors = ${isErrors}/_isErrors = ${_isErrors} ('${whatError}')\n` +
       ` allRequire = ${_allRequired} --------- `;
-    logline('', cv);
+    logline('', cv); */
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputs, initialized]);
@@ -128,7 +128,7 @@ function ValidatedElements<T extends { [key: string]: IInput }, V>({
         scrollToFirstInvalidInput(firstInvalidCoordinate);
       }
     }
-    logline('[ValidateElements/useEffect/errors] errors', { errors });
+    //logline('[ValidateElements/useEffect/errors] errors', { errors });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [errors]);
 
