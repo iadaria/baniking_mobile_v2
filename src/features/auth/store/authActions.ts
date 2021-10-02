@@ -20,51 +20,51 @@ export const checkAuth = () => ({
 
 export const emailRegister = (payload: Partial<ICredential>) => ({
   type: constants.EMAIL_REGISTER,
-  payload: payload,
+  payload,
 });
 
 export const phoneRegister = (payload: RegisterPayload) => ({
   type: constants.PHONE_REGISTER,
-  payload: payload,
+  payload,
 });
 
 export const verify = (payload: VerifyPayload) => ({
   type: constants.VERIFY,
-  payload: payload,
+  payload,
 });
 
 export const notify = (payload: NotifyPayload) => ({
   type: constants.NOTIFY,
-  payload: payload,
+  payload,
 });
 
 export const registerComplete = (payload: CompleteRegisterPayload) => ({
   type: constants.COMPLETE_REGISTER,
-  payload: payload,
+  payload,
 });
 
 export const initVerifyInputs = (payload: VerifyPayload) => ({
   type: constants.INIT_VERIFY_INPUTS,
-  payload: payload,
+  payload,
 });
 
 export const initRegisterCompleteInputs = (
   payload: CompleteRegisterPayload,
 ) => ({
   type: constants.INIT_REGISTER_COMPLETE_INPUTS,
-  payload: payload,
+  payload,
 });
 
 // Login
 
 export const loginPhone = (payload: LoginPhonePayload) => ({
   type: constants.LOGIN_PHONE,
-  payload: payload,
+  payload,
 });
 
 export const socialLogin = (provider: SocialProvider) => ({
   type: constants.SOCIAL_LOGIN,
-  payload: provider,
+  provider,
 });
 
 export const googleLogIn = () => ({
@@ -89,12 +89,12 @@ export const setAuthToken = (token: string) => ({
 
 export const resetPassword = (payload: ResetPasswordPayload) => ({
   type: constants.RESET_PASSWORD,
-  payload: payload,
+  payload,
 });
 
 export const restorePassword = (payload: RestorePasswordPayload) => ({
   type: constants.RESTORE_PASSWORD,
-  payload: payload,
+  payload,
 });
 
 // Results: SUCCESS & FAIL
