@@ -31,7 +31,7 @@ function* orderCallSaga({ payload }: IAction) {
 
     yield methods.orderCall(body, bathId);
 
-    yield showAlert('Успешное выполнение заявки', 'Заявка отправлена');
+    yield showAlert('', 'Заявка успешно отправлена');
   } catch (e) {
     log('Error', e);
 
