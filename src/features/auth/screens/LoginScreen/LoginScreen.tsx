@@ -42,7 +42,7 @@ export function LoginScreen({ navigation }: IProps) {
         <Block style={[{ flexGrow: 1 }, styles.list]} base white>
           <LoginForm navigation={navigation} scrollViewRef={scrollViewRef} />
           {/*  Social login block */}
-          <Block margin={[9, 0, 3]}>
+          {/*  <Block margin={[9, 0, 3]}>
             <AppText caption medium center size={sizes.text.label + 0.1}>
               Или войдите через социальные сети
             </AppText>
@@ -60,9 +60,9 @@ export function LoginScreen({ navigation }: IProps) {
                 <YandexIcon />
               </TouchableOpacity>
             </Block>
-          </Block>
+          </Block> */}
           {/*  Sign in  */}
-          <Block margin={[0, 0, 0]} row middle>
+          <Block margin={[9, 0, 0]} row middle>
             <AppText primary center>
               Eще не зарегистрированы?
             </AppText>

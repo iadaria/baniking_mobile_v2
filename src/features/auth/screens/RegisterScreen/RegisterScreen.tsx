@@ -58,7 +58,7 @@ function RegisterContainer({ navigation, phoneRegister, errors }: IProps) {
             {/* Social login block */}
             {/* <SoialLoginBlock /> */}
             {/* Sign in */}
-            <Block row middle>
+            <Block margin={[3, 0, 0]} row middle>
               <AppText primary center>
                 Уже зарегистрированы?
               </AppText>
