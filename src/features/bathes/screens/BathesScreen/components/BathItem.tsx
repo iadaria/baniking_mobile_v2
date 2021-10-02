@@ -87,9 +87,9 @@ export default function BathItem({ bath, distance }: IProps) {
           {name}
         </AppText>
 
-        <AppText secondary tag>
+        {/* <AppText secondary tag>
           {short_description && `${short_description.substring(0, 45)} ...`}
-        </AppText>
+        </AppText> */}
         {!isNonRating(rating) ? (
           <Stars rating={rating} />
         ) : (
