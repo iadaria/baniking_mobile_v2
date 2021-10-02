@@ -1,4 +1,4 @@
-import { IRootState } from './../../../../app/store/rootReducer';
+import { IRootState } from 'src/app/store/rootReducer';
 import { GOOGLE_API } from 'react-native-dotenv';
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { methods } from '~/src/app/api';
