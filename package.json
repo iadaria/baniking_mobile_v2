@@ -36,7 +36,8 @@
     "android-uninstall": "adb uninstall \"com.baniking_mobile_v2\"",
     "ios-bundle": "react-native bundle --entry-file index.js --bundle-output ios/baniking_mobile/main.jsbundle --dev false --platform ios --assets-dest ios/baniking_mobile",
     "ios-release": "npx react-native run-ios --configuration Release",
-    "ios-debug": "npx react-native run-ios --configuration Debug"
+    "ios-debug": "npx react-native run-ios --configuration Debug",
+    "test-phone": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch phoneFormat.test.ts  --no-cache"
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
@@ -83,6 +84,7 @@
     "validate.js": "^0.13.1"
   },
   "devDependencies": {
+    "ts-jest": "^27.0.5",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
