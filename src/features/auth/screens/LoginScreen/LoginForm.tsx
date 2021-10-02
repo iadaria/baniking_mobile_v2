@@ -18,6 +18,7 @@ import { AuthLogoLeft, AuthLogoRight, SwitcherIcon } from '~/src/assets';
 import { defaultLoginInputs } from '../contracts/loginInputs';
 import { colors, multiplier, sizes } from '~/src/app/common/constants';
 import { logline } from '~/src/app/utils/debug';
+import { phoneFormat } from '~/src/app/utils/common';
 
 interface IProps {
   navigation: StackNavigationProp<ParamListBase>;
@@ -39,8 +40,10 @@ const LoginFormContainer = ({
     logline('LoginForm', 'login');
     if (valuesRef.current) {
       const device_name = await DeviceInfo.getDeviceName();
+      const formatedPhone = phoneFormat(valuesRef.current.phone);
       const data = {
         ...valuesRef.current,
+        phone: formatedPhone,
         device_name,
         remember,
       };
@@ -73,7 +76,8 @@ const LoginFormContainer = ({
         id="phone"
         placeholder="+7(___)___-__-__"
         center
-        keyboardType="numeric"
+        phone
+        keyboardType="phone-pad"
         //isScrollToFocused
       />
       <Block row middle center>

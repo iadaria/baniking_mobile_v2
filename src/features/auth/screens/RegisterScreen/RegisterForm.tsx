@@ -13,9 +13,9 @@ import { IErrors } from '~/src/app/utils/error';
 import { AuthLogoLeft, AuthLogoRight, NecessaryIcon } from '~/src/assets';
 import { defaultRegisterInputs } from '../contracts/registerInputs';
 import { sizes } from '~/src/app/common/constants';
-import { log } from '~/src/app/utils/debug';
 import { Input } from '~/src/app/common/components/UI/Input';
 import { RegisterPayload } from '../../store/saga/registerPhoneSaga';
+import { phoneFormat } from '~/src/app/utils/common';
 
 const supportedURLOne = 'https://google.com';
 // const unsupportedURL = 'slack://open?team=123456';
@@ -63,7 +63,6 @@ export default function RegisterForm({
   scrollViewRef,
   phoneRegister,
   scrollPosition,
-  errors,
 }: IProps) {
   const [recreate, setRecreate] = React.useState<boolean>(true);
   const valuesRef = React.useRef<RegisterPayload>();
@@ -71,7 +70,8 @@ export default function RegisterForm({
   async function handleSubmit() {
     //const device_name = await DeviceInfo.getDeviceName();
     if (valuesRef.current) {
-      phoneRegister(valuesRef.current);
+      const formatedPhone = phoneFormat(valuesRef.current.phone);
+      phoneRegister({ ...valuesRef.current, phone: formatedPhone });
       setRecreate(!recreate);
     }
   }
@@ -129,13 +129,12 @@ export default function RegisterForm({
         <NecessaryIcon style={{ marginHorizontal: 3 }} />
       </Block>
       <Input
-        style={{ borderRadius: 10, paddingLeft: wp(25) }}
         id="phone"
-        placeholder="+7(___)___-__-__   "
-        mask="+[0]([000])[000]-[00]-[00]"
+        placeholder="+7(___)___-__-__"
         phone
-        keyboardType="numeric"
+        keyboardType="phone-pad"
         isScrollToFocused
+        center
       />
       {/* Accept */}
       <AppChecker id="agreement" text={<AgreementText />} />

@@ -27,7 +27,7 @@ export const defaultProfileInputs: IProfileInputs = {
     require: false,
   }, */
   phone: {
-    type: 'phone',
+    type: 'phoneWithMask',
     value: '',
     require: true,
   },

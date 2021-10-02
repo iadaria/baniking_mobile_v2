@@ -7,7 +7,7 @@ export const defaultOrderCallInputs: IOrderCallInputs = {
     require: true,
   },
   phone: {
-    type: 'phone',
+    type: 'phoneWithMask',
     value: '',
     require: true,
   },

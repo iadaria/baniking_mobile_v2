@@ -11,6 +11,7 @@ import { sizes } from '~/src/app/common/constants';
 import { AuthLogoLeft, AuthLogoRight } from '~/src/assets';
 import { defaultRecoveryInputs } from '../contracts/recoveryInputs';
 import { ResetPasswordPayload } from '../../store/saga/resetPasswordSaga';
+import { phoneFormat } from '~/src/app/utils/common';
 
 interface IProps {
   navigation: StackNavigationProp<ParamListBase>;
@@ -28,7 +29,8 @@ const ResetPasswordFormContainer = ({
 
   const handleResetPassword = () => {
     if (valuesRef.current) {
-      resetPassword(valuesRef.current);
+      const formatedPhone = phoneFormat(valuesRef.current.phone);
+      resetPassword({ ...valuesRef.current, phone: formatedPhone });
       setRecreate(!recreate);
     }
   };
@@ -56,8 +58,8 @@ const ResetPasswordFormContainer = ({
         style={{ borderRadius: 10 }}
         id="phone"
         placeholder="+7(___)___-__-__   "
-        mask="+[0]([000])[000]-[00]-[00]"
-        keyboardType="numeric"
+        //mask="+[0]([000])[000]-[00]-[00]"
+        keyboardType="phone-pad"
         center
       />
       {/* Button */}

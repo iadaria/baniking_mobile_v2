@@ -1,5 +1,6 @@
 export const isBegin = (page: number) => page === 0;
 import { appPatterns } from '~/src/app/common/constants/common';
+import { log } from './debug';
 
 export const SEP_PAGE = 4;
 
@@ -46,4 +47,13 @@ export function compareObj(obj1: any, obj2: any): boolean {
 
 export function isEmptyObj(obj: any) {
   return Object.keys(obj).length === 0;
+}
+
+export function phoneFormat(phone: string): string {
+  const match = phone.match(/^([+]\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+  //log('[formatPhone]/match', match);
+  if (match && match.length > 5) {
+    return `${match[1]}(${match[2]})${match[3]}-${match[4]}-${match[5]}`;
+  }
+  return phone;
 }
