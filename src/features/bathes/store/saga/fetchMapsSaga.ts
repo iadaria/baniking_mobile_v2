@@ -16,7 +16,7 @@ import { FETCH_MAPS } from '../bathConstants';
 
 interface IAction {
   payload: Bath[];
-  type?: string;
+  type: string;
 }
 
 export function* fetchMapsSaga({ payload: bathes }: IAction) {
@@ -27,7 +27,7 @@ export function* fetchMapsSaga({ payload: bathes }: IAction) {
       ({ map }: IRootState) => map,
     );
 
-    logline('n****[fetchMapsSaga]', userLocation);
+    logline('****[fetchMapsSaga] userLocation', userLocation);
     // logline('[fetchMapsSaga]', location);
 
     if (userLocation) {

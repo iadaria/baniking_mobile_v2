@@ -151,10 +151,8 @@ export async function getDirections(
 ): Promise<[number, string]> {
   const newParams = { ...params, key: GOOGLE_API };
   try {
-    const {
-      geocoded_waypoints,
-      routes,
-    }: IDirectionsResponse = await methods.getDirections(null, newParams);
+    const { geocoded_waypoints, routes }: IDirectionsResponse =
+      await methods.getDirections(null, newParams);
     if (
       geocoded_waypoints.length > 1 &&
       geocoded_waypoints[0].geocoder_status === 'OK' &&
@@ -174,10 +172,8 @@ export async function getPoints(
 ): Promise<string | null> {
   const newParams = { ...params, key: GOOGLE_API };
   try {
-    const {
-      geocoded_waypoints,
-      routes,
-    }: IDirectionsResponse = await methods.getDirections(null, newParams);
+    const { geocoded_waypoints, routes }: IDirectionsResponse =
+      await methods.getDirections(null, newParams);
     if (
       geocoded_waypoints.length > 1 &&
       geocoded_waypoints[0].geocoder_status === 'OK' &&

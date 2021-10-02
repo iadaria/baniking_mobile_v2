@@ -29,7 +29,7 @@ function* fetchBathesSaga(_: IAction) {
     const { count, baths } = result;
     logline('\n\n***[fetchBathesSaga] params ' + count, params);
     yield put(addBathes({ bathes: baths, count }));
-    yield fork(fetchMapsSaga, { payload: baths });
+    yield fork(fetchMapsSaga, { payload: baths, type: '' });
   } catch (e) {
     log('[fetchBathesSaga/error]', e);
 

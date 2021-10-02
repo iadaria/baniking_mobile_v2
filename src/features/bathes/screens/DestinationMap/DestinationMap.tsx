@@ -12,6 +12,8 @@ import { MarkerIconSvg } from '~/src/assets';
 import MapScreen from '../../components/MapScreen';
 import { logline } from '~/src/app/utils/debug';
 import { Location } from '~/src/app/models/map';
+import { BackButton } from '~/src/app/common/components/BackButton';
+import { routes } from '~/src/navigation/helpers/routes';
 
 export interface IProps {
   selectedBath: IBathDetailed | null;
@@ -56,7 +58,7 @@ function DestinationMapContainer({ selectedBath, userLocation }: IProps) {
           }
           // setPoints(result);
         })
-        .catch((error) => {
+        .catch(error => {
           logline('[DestingationMap/getPoitns/error]', error);
         });
     }
@@ -113,6 +115,9 @@ function DestinationMapContainer({ selectedBath, userLocation }: IProps) {
 
   return (
     <View style={[styles.container]}>
+      <View style={styles.backButton}>
+        <BackButton screen={routes.bathesTab.Bath} />
+      </View>
       <MapScreen
         style={styles.container}
         onMapReady={onMapReady}
