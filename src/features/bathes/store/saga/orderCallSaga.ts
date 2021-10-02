@@ -1,29 +1,43 @@
 import { methods } from '~/src/app/api';
 import { takeLatest } from 'redux-saga/effects';
 import { showAlert } from '~/src/app/common/components/showAlert';
-import { IOrderCallParams } from '~/src/app/models/bath';
+//import { OrderCallParams } from '~/src/app/models/bath';
 import { getErrorStrings } from '~/src/app/utils/error';
 import { ORDER_CALL } from '../bathConstants';
 import { log } from '~/src/app/utils/debug';
 
+/* interface IAction {
+  type: string;
+  payload: OrderCallParams;
+} */
+
+export type OrderCallPayload = {
+  bathId: number;
+  name: string;
+  phone: string;
+};
+
 interface IAction {
   type: string;
-  payload: IOrderCallParams;
+  payload: OrderCallPayload;
 }
 
 function* orderCallSaga({ payload }: IAction) {
   try {
-    log('[orderCallSaga]', payload);
+    log('[orderCallSaga]***', payload);
 
-    // yield methods.orderCall(payload, null);
+    const { name, phone, bathId } = payload;
+    const body = { name, phone };
+
+    yield methods.orderCall(body, bathId);
+
+    yield showAlert('Успешное выполнение заявки', 'Заявка отправлена');
   } catch (e) {
     log('Error', e);
 
     let [errors, message] = getErrorStrings(e);
 
-    //yield put(orderCallFail(errors));
-
-    log('[sendProfileSettingsSaga]', [errors, message]);
+    log('[orderCallSaga]', [errors, message]);
 
     const errorMessage = 'Ошибка отправки запроса';
 

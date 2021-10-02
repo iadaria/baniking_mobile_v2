@@ -7,8 +7,8 @@ import {
 } from '~/src/app/common/components/UI';
 import ValidatedElements from '~/src/app/common/components/ValidatedElements';
 import { AuthLogoLeft, AuthLogoRight } from '~/src/assets';
-import { IOrderCallInputs } from '../../contracts/orderCallInputs';
-import { IOrderCall, IOrderCallParams } from '~/src/app/models/bath';
+import { OrderCallInputs } from '../../contracts/orderCallInputs';
+import { OrderCall, OrderCallParams } from '~/src/app/models/bath';
 import { ScrollView } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
@@ -21,8 +21,8 @@ interface IProps {
   scrollViewRef: React.RefObject<ScrollView>;
   blockPosition: number;
   scrollPosition?: number;
-  defaultInputs: IOrderCallInputs;
-  orderCall: (orderCallParams: IOrderCallParams) => void;
+  defaultInputs: OrderCallInputs;
+  orderCall: (orderCallParams: OrderCallParams) => void;
 }
 
 export default function OrderCallForm({
@@ -34,10 +34,7 @@ export default function OrderCallForm({
   orderCall,
 }: IProps) {
   //const [recreate, setRecreate] = React.useState<boolean>(true);
-  const valuesRef = React.useRef<IOrderCall>({
-    name: defaultInputs.name,
-    phone: defaultInputs.phone,
-  });
+  const valuesRef = React.useRef<OrderCall>();
   const timeIds: NodeJS.Timeout[] = [];
 
   useEffect(() => {
@@ -56,11 +53,11 @@ export default function OrderCallForm({
         phone: valuesRef.current.phone!,
       };
       orderCall(orderCallParams);
-      if (navigation.canGoBack()) {
-        navigation.goBack();
-      } else {
-        navigation.navigate(routes.bathesTab.Bath);
-      }
+    }
+    if (navigation.canGoBack()) {
+      navigation.goBack();
+    } else {
+      navigation.navigate(routes.bathesTab.Bath);
     }
   };
 

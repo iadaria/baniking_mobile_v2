@@ -21,14 +21,15 @@ import { AppText, Block } from '~/src/app/common/components/UI';
 import { colors, isIos, multiplier } from '~/src/app/common/constants';
 import { formatPhoneNumber } from '~/src/app/utils/system';
 import OrderCallForm from './OrderCallForm';
-import { IOrderCallInputs } from '../../contracts/orderCallInputs';
-import { IOrderCall } from '~/src/app/models/bath';
+import { OrderCallInputs } from '../../contracts/orderCallInputs';
+import { OrderCall } from '~/src/app/models/bath';
 import { routes } from '~/src/navigation/helpers/routes';
 import { bathOneImg, CloseWhiteIcon } from '~/src/assets';
 import { styles } from './styles';
 import { logline } from '~/src/app/utils/debug';
+import { OrderCallPayload } from '../../store/saga/orderCallSaga';
 
-interface IOrderCallParams {
+interface OrderCallParams {
   bathId: number;
   bathName: string;
   short_description: string;
@@ -39,10 +40,10 @@ interface IProps {
   route: Route<string, object | undefined>;
   navigation: StackNavigationProp<ParamListBase>;
   currentProfile: IProfile | null;
-  defaultOrderCallInputs: IOrderCallInputs;
+  defaultOrderCallInputs: OrderCallInputs;
   getProfile: () => void;
-  initOrderCallInputs: (orderCall: IOrderCall) => void;
-  orderCall: (orderCallParams: IOrderCallParams) => void;
+  initOrderCallInputs: (orderCall: OrderCall) => void;
+  orderCall: (orderCallPayload: OrderCallPayload) => void;
 }
 
 function OrderCallScreenContainer({
@@ -57,8 +58,8 @@ function OrderCallScreenContainer({
   const scrollViewRef = useRef<ScrollView>(null);
   const [blockPosition, setBlockPosition] = useState<number>(0);
 
-  const params: IOrderCallParams | undefined = (route?.params ||
-    {}) as IOrderCallParams;
+  const params: OrderCallParams | undefined = (route?.params ||
+    {}) as OrderCallParams;
   const { bathId, bathName, short_description, bathPhone } = params;
 
   useEffect(() => {

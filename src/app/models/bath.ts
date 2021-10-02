@@ -77,17 +77,16 @@ export interface IProposition {
   discount: string | null;
 }
 
-export interface IOrderCall {
+export type OrderCall = {
   name: string;
   phone: string;
-}
+};
 
-export interface IOrderCallParams {
+export type OrderCallParams = {
   bathId: number;
   name: string;
   phone: string;
-}
-
+};
 // Google
 export interface IGooglePlaceParams {
   key: string;

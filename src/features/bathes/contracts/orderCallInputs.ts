@@ -1,6 +1,6 @@
 import { IInput } from '~/src/app/models/validate';
 
-export const defaultOrderCallInputs: IOrderCallInputs = {
+export const defaultOrderCallInputs: OrderCallInputs = {
   name: {
     type: 'name',
     value: '',
@@ -13,7 +13,7 @@ export const defaultOrderCallInputs: IOrderCallInputs = {
   },
 };
 
-export interface IOrderCallInputs {
+export interface OrderCallInputs {
   name: IInput;
   phone: IInput;
   [key: string]: IInput;
