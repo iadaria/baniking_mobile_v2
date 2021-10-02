@@ -1,8 +1,9 @@
 import * as constants from './bathConstants';
-import { Bath, IMap, IOrderCallParams } from '~/src/app/models/bath';
+import { Bath, IMap, OrderCallParams } from '~/src/app/models/bath';
 import { IErrors } from '~/src/app/utils/error';
 import { IBathDetailed } from '~/src/app/models/bath';
-import { IOrderCall } from '~/src/app/models/bath';
+import { OrderCall } from '~/src/app/models/bath';
+import { OrderCallPayload } from './saga/orderCallSaga';
 
 export const addBathes = (payload: { bathes: Bath[]; count: number }) => ({
   type: constants.ADD_BATHES,
@@ -91,16 +92,16 @@ export const fetchMaps = (bathes: Bath[]) => ({
   payload: bathes,
 });
 
-// Order
+// Order call
 
-export const initOrderCallInputs = (payload: IOrderCall) => {
+export const initOrderCallInputs = (payload: OrderCall) => {
   return {
     type: constants.INIT_ORDER_CALL_INPUTS,
     payload,
   };
 };
 
-export const orderCall = (payload: IOrderCallParams) => ({
+export const orderCall = (payload: OrderCallPayload) => ({
   type: constants.ORDER_CALL,
   payload,
 });

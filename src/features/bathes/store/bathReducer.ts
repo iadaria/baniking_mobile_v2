@@ -3,7 +3,7 @@ import { Bath, IMap, IBathDetailed } from '~/src/app/models/bath';
 import * as constants from './bathConstants';
 import {
   defaultOrderCallInputs,
-  IOrderCallInputs,
+  OrderCallInputs,
 } from '../contracts/orderCallInputs';
 import { initInputs } from '~/src/app/utils/validate';
 // https://scotch.io/tutorials/implementing-an-infinite-scroll-list-in-react-native
@@ -30,7 +30,7 @@ export interface IBathState {
 }
 
 interface IInputs {
-  orderCall: IOrderCallInputs;
+  orderCall: OrderCallInputs;
 }
 
 const initialState: IBathState = {
@@ -123,14 +123,6 @@ export default function bathReducer(
         selectedBath: null,
       };
 
-    case constants.INIT_ORDER_CALL_INPUTS:
-      return {
-        ...state,
-        inputs: {
-          orderCall: { ...initInputs(state.inputs.orderCall, payload) },
-        },
-      };
-
     case constants.REUSE_BATHES:
       return {
         ...state,
@@ -188,6 +180,16 @@ export default function bathReducer(
       return {
         ...state,
         maps: [],
+      };
+
+    // Call
+
+    case constants.INIT_ORDER_CALL_INPUTS:
+      return {
+        ...state,
+        inputs: {
+          orderCall: { ...initInputs(state.inputs.orderCall, payload) },
+        },
       };
 
     default:
