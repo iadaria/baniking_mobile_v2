@@ -1,13 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
-import {
-  Image,
-  LayoutChangeEvent,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
-import { ParamListBase, Route } from '@react-navigation/native';
-import { BlurView } from '@react-native-community/blur';
+import { LayoutChangeEvent, ScrollView, TouchableOpacity } from 'react-native';
+import { ParamListBase } from '@react-navigation/native';
 import { getProfileSettings as getProfileSettingsAction } from '~/src/features/profiles/store/profileActions';
 import {
   initOrderCallInputs as initOrderCallInputsAction,
@@ -17,28 +11,22 @@ import { IRootState } from '~/src/app/store/rootReducer';
 import { IProfile } from '~/src/app/models/profile';
 import { KeyboardWrapper } from '~/src/app/common/components/KeyboardWrapper';
 import { AppText, Block } from '~/src/app/common/components/UI';
-import { colors, isIos, multiplier } from '~/src/app/common/constants';
+import { multiplier } from '~/src/app/common/constants';
 import { formatPhoneNumber } from '~/src/app/utils/system';
 import OrderCallForm from './OrderCallForm';
 import { OrderCallInputs } from '../../contracts/orderCallInputs';
-import { OrderCall } from '~/src/app/models/bath';
+import { IBathDetailed, OrderCall } from '~/src/app/models/bath';
 import { routes } from '~/src/navigation/helpers/routes';
-import { bathOneImg, CloseWhiteIcon } from '~/src/assets';
+import { CloseWhiteIcon } from '~/src/assets';
 import { styles } from './styles';
 import { logline } from '~/src/app/utils/debug';
 import { OrderCallPayload } from '../../store/saga/orderCallSaga';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
-interface OrderCallParams {
-  bathId: number;
-  bathName: string;
-  short_description: string;
-  bathPhone: string;
-}
+import { Blurhash } from 'react-native-blurhash';
 
 interface IProps {
-  route: Route<string, object | undefined>;
   navigation: NativeStackNavigationProp<ParamListBase>;
+  selectedBath: IBathDetailed | null;
   currentProfile: IProfile | null;
   defaultOrderCallInputs: OrderCallInputs;
   getProfile: () => void;
@@ -47,7 +35,8 @@ interface IProps {
 }
 
 function OrderCallScreenContainer({
-  route,
+  //route,
+  selectedBath,
   navigation,
   currentProfile,
   getProfile,
@@ -58,15 +47,20 @@ function OrderCallScreenContainer({
   const scrollViewRef = useRef<ScrollView>(null);
   const [blockPosition, setBlockPosition] = useState<number>(0);
 
-  const params: OrderCallParams | undefined = (route?.params ||
-    {}) as OrderCallParams;
-  const { bathId, bathName, short_description, bathPhone } = params;
+  /*   const params: OrderCallParams | undefined = (route?.params ||
+    {}) as OrderCallParams; */
+  const {
+    id: bathId,
+    name: bathName,
+    short_description,
+    phone: bathPhone,
+  } = selectedBath!;
 
   useEffect(() => {
     if (currentProfile) {
       logline('[OrderCallScreen/useEffect] getProfileSettings()', '');
       initOrderCallInputs({
-        name: currentProfile.name,
+        name: currentProfile.name || '',
         phone: currentProfile.phone,
       });
     } else {
@@ -76,19 +70,16 @@ function OrderCallScreenContainer({
 
   return (
     <Block safe full>
-      <Image source={bathOneImg} style={styles.blurImage} />
-      <BlurView
-        style={styles.absolute}
-        blurType="dark"
-        blurAmount={isIos ? 1 : 3}
-        reducedTransparencyFallbackColor={colors.title}
+      <Blurhash
+        style={styles.t1}
+        blurhash="p36kFrD%WBxaIooLWW~UM{WCofRkoLWC00xuofR*t8j?ay00xtt7R*s:WVj@%haKofWpnha}of?bofWBayoIoLkC"
       />
+      {/* <Image source={bathOneImg} style={styles.blurImage} /> */}
       <KeyboardWrapper>
         <ScrollView
           alwaysBounceVertical
           ref={scrollViewRef}
           style={styles.modalView}>
-          {/* <Block safe full> */}
           <TouchableOpacity
             style={styles.closeIcon}
             onPress={() => {
@@ -119,7 +110,6 @@ function OrderCallScreenContainer({
             {formatPhoneNumber(bathPhone)}
           </AppText>
           <AppText center>или</AppText>
-          {/* Форма */}
           <Block
             onLayout={({ nativeEvent }: LayoutChangeEvent) =>
               setBlockPosition(nativeEvent.layout.y)
@@ -146,6 +136,7 @@ const OrderCallConnected = connect(
   ({ profile, bath }: IRootState) => ({
     defaultOrderCallInputs: bath.inputs.orderCall,
     currentProfile: profile.currentUserProfile,
+    selectedBath: bath.selectedBath,
   }),
   {
     initOrderCallInputs: initOrderCallInputsAction,

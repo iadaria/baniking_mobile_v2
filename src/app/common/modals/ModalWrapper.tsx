@@ -2,9 +2,9 @@ import React from 'react';
 import { Modal, StyleSheet } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { closeModal } from './modalReducer';
-import { BlurView } from '@react-native-community/blur';
-import { isIos } from '../constants';
+import { isIos, windowHeight } from '../constants';
 import { colors } from '~/src/app/common/constants';
+import { Blurhash } from 'react-native-blurhash';
 
 export default function ModalWrapper({ children, header }: any) {
   const dispatch = useDispatch();
@@ -16,11 +16,9 @@ export default function ModalWrapper({ children, header }: any) {
       transparent={true}
       visible={true}
       onRequestClose={() => dispatch(closeModal())}>
-      <BlurView
+      <Blurhash
         style={styles.absolute}
-        blurType="dark"
-        blurAmount={isIos ? 1 : 5}
-        reducedTransparencyFallbackColor={colors.title}
+        blurhash="p36kFrD%WBxaIooLWW~UM{WCofRkoLWC00xuofR*t8j?ay00xtt7R*s:WVj@%haKofWpnha}of?bofWBayoIoLkC"
       />
       {children}
     </Modal>
@@ -38,5 +36,7 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+    height: windowHeight + 20,
+    //height: windowHeight,
   },
 });

@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { Animated, FlatList, Image } from 'react-native';
-import { BlurView } from '@react-native-community/blur';
 import { styles } from './styles';
 import { Block } from '~/src/app/common/components/UI';
-import { colors, isIos, windowWidth } from '~/src/app/common/constants';
+import { windowWidth } from '~/src/app/common/constants';
 import { Route } from '@react-navigation/native';
 import Tabs from './Tabs';
 import { BackButton } from '~/src/app/common/components/BackButton';
+import { Blurhash } from 'react-native-blurhash';
 
 interface IProps {
   route: Route<string, object | undefined>;
@@ -67,11 +67,9 @@ export function BathesPhotosScreen({ route }: IProps) {
           return (
             <Block style={styles.image} center middle>
               <Image source={{ uri: item }} style={styles.blurImage} />
-              <BlurView
+              <Blurhash
                 style={styles.absolute}
-                blurType="dark"
-                blurAmount={isIos ? 1 : 3}
-                reducedTransparencyFallbackColor={colors.title}
+                blurhash="p36kFrD%WBxaIooLWW~UM{WCofRkoLWC00xuofR*t8j?ay00xtt7R*s:WVj@%haKofWpnha}of?bofWBayoIoLkC"
               />
               <Image style={styles.photo} source={{ uri: item }} />
             </Block>

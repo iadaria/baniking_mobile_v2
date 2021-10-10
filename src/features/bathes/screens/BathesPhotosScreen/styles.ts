@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { sizes, windowWidth } from '~/src/app/common/constants';
-import { isIos, screenHeight } from '~/src/app/common/constants/platform';
+import {
+  isIos,
+  screenHeight,
+  windowHeight,
+} from '~/src/app/common/constants/platform';
 
 export const styles = StyleSheet.create({
   blurImage: {
@@ -28,6 +32,7 @@ export const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+    height: windowHeight,
   },
   tabsContainer: {
     position: 'absolute',

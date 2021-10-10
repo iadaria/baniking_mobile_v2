@@ -1,6 +1,11 @@
 import { StyleSheet } from 'react-native';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import { windowWidth, multiplier, isIos } from '~/src/app/common/constants';
+import {
+  windowWidth,
+  multiplier,
+  isIos,
+  windowHeight,
+} from '~/src/app/common/constants';
 
 export const styles = StyleSheet.create({
   modalView: {
@@ -16,8 +21,9 @@ export const styles = StyleSheet.create({
   },
   blurImage: {
     width: windowWidth,
-    position: 'absolute',
-    top: 0,
+    height: windowHeight / 2,
+    //position: 'absolute',
+    //top: 0,
   },
   closeIcon: {
     alignItems: 'center',
@@ -48,5 +54,14 @@ export const styles = StyleSheet.create({
   item: {
     backgroundColor: 'white',
     padding: wp(5),
+  },
+  t1: {
+    //...StyleSheet.absoluteFill,
+    width: windowWidth,
+    height: windowHeight / 2,
+    opacity: 0.5,
+    position: 'absolute',
+    top: 0,
+    left: 0,
   },
 });

@@ -62,7 +62,7 @@ export function Header({ iconKind = 'open' }: IHeader) {
     <Block row center space="between">
       {headerIcon}
       <Block center row>
-        <AppHeaderTitle points={1} />
+        <AppHeaderTitle />
         <HeaderRightButton />
       </Block>
     </Block>

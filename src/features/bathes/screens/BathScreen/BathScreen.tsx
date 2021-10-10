@@ -30,6 +30,8 @@ import { BathInfo } from './BathInfo';
 import BathDestinationMap from './BathDestinationMap';
 import { Location } from '~/src/app/models/map';
 import { isLatitude, isLongitude } from '~/src/app/utils/bathUtility';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { ParamListBase } from '@react-navigation/core';
 
 const BASE = sizes.offset.base;
 
@@ -123,26 +125,21 @@ const Bathers: React.FC<{ bathers: IBather[] }> = ({ bathers }) => {
   );
 };
 
-const OrderCall: React.FC<{ bath: IBathDetailed }> = ({ bath }) => {
-  return (
-    <TouchableOpacity
-      style={styles.orderCall}
-      onPress={() => {
-        const orderCallProps = {
-          bathId: bath.id,
-          bathName: bath.name,
-          short_description: bath.short_description,
-          bathPhone: bath.phone,
-        };
-        RNav.navigate(routes.bathesTab.OrderCall, orderCallProps);
-      }}>
-      <AppText primary medium>
-        Заказать звонок
-      </AppText>
-      <OrderCallIcon width={wp(10)} />
-    </TouchableOpacity>
-  );
-};
+const OrderCall: React.FC<{
+  navigation: NativeStackNavigationProp<ParamListBase>;
+}> = ({ navigation }) => (
+  <TouchableOpacity
+    style={styles.orderCall}
+    onPress={() => {
+      navigation.navigate(routes.bathesTab.OrderCall);
+      //RNav.navigate(routes.bathesTab.OrderCall);
+    }}>
+    <AppText primary medium>
+      Заказать звонок
+    </AppText>
+    <OrderCallIcon width={wp(10)} />
+  </TouchableOpacity>
+);
 
 const Map: React.FC<{
   location: Location | null;
@@ -172,6 +169,7 @@ const Map: React.FC<{
 };
 
 interface IProps {
+  navigation: NativeStackNavigationProp<ParamListBase>;
   loading: boolean;
   selectedBath: IBathDetailed | null;
   persistImages: IPersistImages;
@@ -182,12 +180,18 @@ interface IProps {
 }
 
 function BathScreenContainer({
+  navigation,
   loading,
   selectedBath: bath,
   clearSelectedBath,
   maps,
   location,
 }: IProps) {
+  // for test
+  /* useEffect(() => {
+    navigation.navigate(routes.bathesTab.OrderCall);
+  }, []); */
+
   useEffect(() => {
     return () => clearSelectedBath();
   }, [clearSelectedBath]);
@@ -228,7 +232,7 @@ function BathScreenContainer({
         <BathInfrastructure bath={bath} />
         <Divider color="#242424" />
         <BathInfo bath={bath} />
-        <OrderCall bath={bath} />
+        <OrderCall navigation={navigation} />
       </Block>
     </ScrollView>
   );

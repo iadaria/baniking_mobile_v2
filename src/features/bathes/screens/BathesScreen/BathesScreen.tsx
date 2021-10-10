@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { AppText, Block } from '~/src/app/common/components/UI';
 import { IRootState } from '~/src/app/store/rootReducer';
 import { Bath } from '~/src/app/models/bath';
@@ -10,6 +10,7 @@ import { SelectedCity } from './components/SelectedCity';
 import {
   clearBathes as clearBathesAction,
   fetchBathes as fetchBathesAction,
+  selectBath,
 } from '~/src/features/bathes/store/bathActions';
 import { resetPage as resetPageAction } from '~/src/features/filters/store/flterActions';
 import { FilterButton } from './components/FilterButton';
@@ -38,6 +39,12 @@ export function BathesScreenContainer({
   clearBathes,
   resetPage,
 }: IProps) {
+  // for test
+  /* const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(selectBath(1066));
+  }, []); */
+
   useEffect(() => {
     fetchBathes();
   }, [fetchBathes, params]);
