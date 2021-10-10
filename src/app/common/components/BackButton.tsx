@@ -14,7 +14,9 @@ export const BackButton: FC<IProps> = ({
   screen = routes.navigators.DrawerNavigator,
 }) => {
   return (
-    <TouchableOpacity onPress={() => RootNavigation.goBackOrToScreen(screen)}>
+    <TouchableOpacity
+      style={{ borderWidth: 1, borderColor: 'red' }}
+      onPress={() => RootNavigation.goBackOrToScreen(screen)}>
       <BackwardIcon width={wp(8) * multiplier} />
     </TouchableOpacity>
   );
