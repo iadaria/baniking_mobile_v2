@@ -1,5 +1,4 @@
 import React from 'react';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase, Route } from '@react-navigation/native';
 import { AppText, Block } from '~/src/app/common/components/UI';
 import { VerifyForm } from './VerifyForm';
@@ -7,9 +6,10 @@ import { routes } from '~/src/navigation/helpers/routes';
 import { BackButton } from '~/src/app/common/components/BackButton';
 import { Action } from '~/src/app/common/constants';
 import { logline } from '~/src/app/utils/debug';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   route: Route<string, { action: Action } | undefined>;
 }
 

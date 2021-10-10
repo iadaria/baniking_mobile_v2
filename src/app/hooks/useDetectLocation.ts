@@ -16,9 +16,10 @@ export function useDetectLocation() {
   // Если из state получили что нет прав - запрашиваем снова
   useEffect(() => {
     if (!granted) {
-      setTimeout(() => {
+      dispatch(checkPermissionLocation());
+      /* setTimeout(() => {
         dispatch(checkPermissionLocation());
-      }, 2000);
+      }, 2000); */
     }
   }, [dispatch, granted]);
 

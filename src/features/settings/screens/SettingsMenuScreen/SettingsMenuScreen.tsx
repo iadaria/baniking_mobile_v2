@@ -1,14 +1,14 @@
 import React from 'react';
 import { ParamListBase } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Header } from '~/src/app/common/components/Header';
 import { AppText, Block, Divider } from '~/src/app/common/components/UI';
 import { MenuItem } from '~/src/assets';
 import { routes } from '~/src/navigation/helpers/routes';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
 }
 
 export function SettingsMenuScreen({ navigation }: IProps) {

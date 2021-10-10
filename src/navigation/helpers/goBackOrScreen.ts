@@ -1,8 +1,8 @@
 import { ParamListBase } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export function goBackOrScreen(
-  navigation: StackNavigationProp<ParamListBase>,
+  navigation: NativeStackNavigationProp<ParamListBase>,
   name: string,
 ) {
   if (navigation.canGoBack()) {

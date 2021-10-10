@@ -10,13 +10,13 @@ import { AuthLogoLeft, AuthLogoRight } from '~/src/assets';
 import { OrderCallInputs } from '../../contracts/orderCallInputs';
 import { OrderCall, OrderCallParams } from '~/src/app/models/bath';
 import { ScrollView } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 import { routes } from '~/src/navigation/helpers/routes';
 import { logline } from '~/src/app/utils/debug';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   bathId: number;
   scrollViewRef: React.RefObject<ScrollView>;
   blockPosition: number;

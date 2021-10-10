@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { ParamListBase, Route } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { BlurView } from '@react-native-community/blur';
 import { getProfileSettings as getProfileSettingsAction } from '~/src/features/profiles/store/profileActions';
 import {
@@ -28,6 +27,7 @@ import { bathOneImg, CloseWhiteIcon } from '~/src/assets';
 import { styles } from './styles';
 import { logline } from '~/src/app/utils/debug';
 import { OrderCallPayload } from '../../store/saga/orderCallSaga';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface OrderCallParams {
   bathId: number;
@@ -38,7 +38,7 @@ interface OrderCallParams {
 
 interface IProps {
   route: Route<string, object | undefined>;
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   currentProfile: IProfile | null;
   defaultOrderCallInputs: OrderCallInputs;
   getProfile: () => void;

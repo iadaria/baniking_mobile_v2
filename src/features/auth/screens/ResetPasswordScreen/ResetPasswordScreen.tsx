@@ -1,17 +1,17 @@
 import React from 'react';
 import { ScrollView, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { ParamListBase, Route } from '@react-navigation/native';
+import { ParamListBase } from '@react-navigation/native';
 import { AppText, Block } from '~/src/app/common/components/UI';
 import { AuthLogo } from '~/src/assets';
 import { multiplier } from '~/src/app/common/constants';
 import { ResetPasswordForm } from './ResetPasswordForm';
 import { styles } from './styles';
 import { KeyboardWrapper } from '~/src/app/common/components/KeyboardWrapper';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
 }
 
 export function ResetPasswordScreen({ navigation }: IProps) {

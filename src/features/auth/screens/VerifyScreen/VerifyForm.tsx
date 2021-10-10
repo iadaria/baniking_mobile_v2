@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { ScrollView, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
 import { ParamListBase } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { AppText, Block } from '~/src/app/common/components/UI';
 import {
   verify as verifyAction,
@@ -18,9 +17,10 @@ import { IErrors } from '~/src/app/utils/error';
 import { NotifyPayload } from '../../store/saga/notifySaga';
 import { isFullCode } from '~/src/app/utils/common';
 import { Timer } from './Timer';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   action: Action;
   phone: string;
   scrollViewRef?: React.RefObject<ScrollView>;

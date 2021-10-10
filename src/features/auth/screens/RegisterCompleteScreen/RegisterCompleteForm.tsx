@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { ScrollView } from 'react-native';
 import { ParamListBase } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { AppText, Block, AppInput } from '~/src/app/common/components/UI';
 import { AppButton } from '~/src/app/common/components/UI/AppButton';
 import ValidatedElements from '~/src/app/common/components/ValidatedElements';
@@ -18,10 +17,11 @@ import {
 import { IErrors } from '~/src/app/utils/error';
 import { Action, sizes } from '~/src/app/common/constants';
 import { logline } from '~/src/app/utils/debug';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
   scrollViewRef?: React.RefObject<ScrollView>;
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   registerComplete: (payload: CompleteRegisterPayload) => void;
   restorePassword: (payload: RestorePasswordPayload) => void;
   defaultRegisterCompleteIntpus: IRegisterCompleteInputs;

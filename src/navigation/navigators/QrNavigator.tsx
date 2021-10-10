@@ -1,11 +1,13 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import { QrScreen } from '~/src/features/profiles/screens/QrScreen/QrScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Qr = createNativeStackNavigator();
 
 export default function QrNavigator(): JSX.Element {
-  const Qr = createStackNavigator();
   return (
-    <Qr.Navigator screenOptions={{ headerShown: false }}>
+    <Qr.Navigator
+      screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Qr.Screen name="QrScreen" component={QrScreen} />
     </Qr.Navigator>
   );

@@ -8,7 +8,6 @@ import {
   AppInput,
 } from '~/src/app/common/components/UI';
 import DeviceInfo from 'react-native-device-info';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 import { AppButton } from '~/src/app/common/components/UI/AppButton';
 import ValidatedElements from '~/src/app/common/components/ValidatedElements';
@@ -17,11 +16,11 @@ import { LoginPhonePayload } from '~/src/features/auth/store/saga/loginPhoneSaga
 import { AuthLogoLeft, AuthLogoRight, SwitcherIcon } from '~/src/assets';
 import { defaultLoginInputs } from '../contracts/loginInputs';
 import { colors, multiplier, sizes } from '~/src/app/common/constants';
-import { logline } from '~/src/app/utils/debug';
 import { phoneFormat } from '~/src/app/utils/common';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   scrollViewRef?: React.RefObject<ScrollView>;
   loginPhone: (payload: LoginPhonePayload) => void;
 }

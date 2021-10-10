@@ -1,12 +1,13 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import { CabinetScreen } from './screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Cabinet = createStackNavigator();
+const Cabinet = createNativeStackNavigator();
 
 export default function CabinetNavigator() {
   return (
-    <Cabinet.Navigator screenOptions={{ headerShown: false }}>
+    <Cabinet.Navigator
+      screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Cabinet.Screen name="CabinetScreen" component={CabinetScreen} />
     </Cabinet.Navigator>
   );

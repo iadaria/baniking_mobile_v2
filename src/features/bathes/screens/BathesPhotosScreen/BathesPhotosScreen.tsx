@@ -10,7 +10,6 @@ import { BackButton } from '~/src/app/common/components/BackButton';
 
 interface IProps {
   route: Route<string, object | undefined>;
-  //navigation: StackNavigationProp<ParamListBase>;
 }
 
 interface IParams {
@@ -34,7 +33,7 @@ export function BathesPhotosScreen({ route }: IProps) {
     return null;
   }
 
-  let onScrollEnd = (e) => {
+  let onScrollEnd = e => {
     let pageNumber = Math.min(
       Math.max(
         Math.floor(e.nativeEvent.contentOffset.x / windowWidth + 0.5),

@@ -3,8 +3,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import {
   ProfileNavigator,
   BathesNavigator,
-  ReceiptsNavigator,
-  MeetingsNavigator,
   SettingsNavigator,
   QrNavigator,
 } from '~/src/navigation/navigators';
@@ -16,9 +14,9 @@ import {
 } from '../components/appDefaultTheme';
 import { useSelector } from 'react-redux';
 import { IRootState } from '~/src/app/store/rootReducer';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 import { routes } from '~/src/navigation/helpers/routes';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface ILabelProps {
   color: string;
@@ -28,7 +26,7 @@ interface ILabelProps {
 const Drawer = createDrawerNavigator();
 
 interface IScreenOptionsProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
 }
 
 export default function DrawerNavigator({ navigation }: IScreenOptionsProps) {
@@ -51,6 +49,7 @@ export default function DrawerNavigator({ navigation }: IScreenOptionsProps) {
         headerShown: false,
         drawerItemStyle: appDrawerItemStyle,
         drawerStyle: appDrawerStyle(multiMargin),
+
         /* useImperativeHandle(
           ref,
           () => {

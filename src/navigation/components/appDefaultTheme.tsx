@@ -1,5 +1,5 @@
 import { DefaultTheme } from '@react-navigation/native';
-import { StackNavigationOptions } from '@react-navigation/stack';
+import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import { Dimensions, StyleProp, ViewStyle } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -9,16 +9,11 @@ import { colors, sizes } from '~/src/app/common/constants';
 
 const { width } = Dimensions.get('window');
 
-export const defaultScreenOptions: StackNavigationOptions = {
-  // headerTransparent: true,
-  // headerShown: true,
+export const defaultScreenOptions: NativeStackNavigationOptions = {
   headerStyle: {
-    // backgroundColor: colors.primary,
-    // opacity: 1,
-    shadowColor: 'transparent', // delete the bottomBorder for IOS
+    //shadowColor: 'transparent', // delete the bottomBorder for IOS
   },
   headerTitleAlign: 'left', // for IOS to full widht
-  // headerTintColor: colors.white,
 };
 
 export const appDefaultTheme = {

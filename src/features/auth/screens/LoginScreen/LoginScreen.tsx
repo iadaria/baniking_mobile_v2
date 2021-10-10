@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, TouchableOpacity } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ParamListBase } from '@react-navigation/native';
 // import SocialLogin from './components/SocialLogin';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
@@ -8,16 +8,17 @@ import { AppText, Block } from '~/src/app/common/components/UI';
 import { LoginForm } from './LoginForm';
 import {
   AuthLogo,
-  FacebookIcon,
+  /*  FacebookIcon,
   GoogleIcon,
   VkIcon,
-  YandexIcon,
+  YandexIcon, */
 } from '~/src/assets';
-import { sizes, multiplier } from '~/src/app/common/constants';
+import { multiplier } from '~/src/app/common/constants';
 import { styles } from './styles';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase, string>;
+  //route: RouteProp<ParamList, RouteName>;
 }
 
 export function LoginScreen({ navigation }: IProps) {

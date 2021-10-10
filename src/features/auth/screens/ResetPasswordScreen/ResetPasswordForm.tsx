@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { Input, AppText, Block } from '~/src/app/common/components/UI';
 import { AppButton } from '~/src/app/common/components/UI/AppButton';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 import ValidatedElements from '~/src/app/common/components/ValidatedElements';
 import { connect } from 'react-redux';
@@ -12,9 +11,10 @@ import { AuthLogoLeft, AuthLogoRight } from '~/src/assets';
 import { defaultRecoveryInputs } from '../contracts/recoveryInputs';
 import { ResetPasswordPayload } from '../../store/saga/resetPasswordSaga';
 import { phoneFormat } from '~/src/app/utils/common';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   scrollViewRef?: React.RefObject<ScrollView>;
   resetPassword: (payload: ResetPasswordPayload) => void;
 }

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import DrawerNavigator from './DrawerNavigator';
 import { connect } from 'react-redux';
-import { getCabinetData as getCabinetDataAction } from '~/src/features/profiles/store/profileActions';
+//import { getCabinetData as getCabinetDataAction } from '~/src/features/profiles/store/profileActions';
 import { IRootState } from '~/src/app/store/rootReducer';
 import AuthNavigator from '~/src/features/auth/AuthNavigator';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 interface IProps {
   authenticated: boolean;
@@ -12,9 +12,9 @@ interface IProps {
   getCabinetData: () => void;
 }
 
-const Main = createStackNavigator();
+const Main = createNativeStackNavigator();
 
-function MainNavigatorContainer({ authenticated, getCabinetData }: IProps) {
+function MainNavigatorContainer({ authenticated }: IProps) {
   useEffect(() => {
     if (authenticated) {
       // logline('[MainNavigator/useEffect/(authenticated === true)/getCabinetData]');
@@ -27,6 +27,9 @@ function MainNavigatorContainer({ authenticated, getCabinetData }: IProps) {
 
   return (
     <Main.Navigator
+      screenOptions={{
+        orientation: 'portrait',
+      }}
       initialRouteName={authenticated ? 'DrawerNavigator' : 'AuthNavigator'}>
       <Main.Screen
         options={{ headerShown: false }}
@@ -48,6 +51,6 @@ export default connect(
     points: system.header.points,
   }),
   {
-    getCabinetData: getCabinetDataAction,
+    //getCabinetData: getCabinetDataAction,
   },
 )(MainNavigatorContainer);

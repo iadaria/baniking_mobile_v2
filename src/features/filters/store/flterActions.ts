@@ -53,3 +53,7 @@ export const cleanExtraParams = () => ({
 export const rollbackExtraParams = () => ({
   type: constants.ROLLBACK_EXTRA_PARAMS,
 });
+
+export const resetPage = () => ({
+  type: constants.RESET_PAGE,
+});

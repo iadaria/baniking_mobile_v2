@@ -1,5 +1,4 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import {
   LoginScreen,
   RegisterScreen,
@@ -7,13 +6,15 @@ import {
   VerifyScreen,
   RegisterCompleteScreen,
 } from './screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Auth = createNativeStackNavigator();
 
 export default function AuthNavigator(): JSX.Element {
-  const Auth = createStackNavigator();
   return (
     <Auth.Navigator
       initialRouteName="LoginScreen"
-      screenOptions={{ headerShown: false }}>
+      screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Auth.Screen name="LoginScreen" component={LoginScreen} />
       <Auth.Screen name="RegisterScreen" component={RegisterScreen} />
       <Auth.Screen

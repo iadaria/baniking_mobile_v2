@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase, Route } from '@react-navigation/native';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { AppText, Block } from '~/src/app/common/components/UI';
@@ -10,9 +9,10 @@ import { styles } from './styles';
 import { KeyboardWrapper } from '~/src/app/common/components/KeyboardWrapper';
 import { Action, multiplier } from '~/src/app/common/constants';
 import { logline } from '~/src/app/utils/debug';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   route: Route<string, { action: Action } | undefined>;
 }
 

@@ -1,11 +1,13 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import TestTwoScreen from '../screens/TestTwoScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const InvitesToConsulat = createNativeStackNavigator();
 
 export default function InvitesToConsulatNavigator(): JSX.Element {
-  const InvitesToConsulat = createStackNavigator();
   return (
-    <InvitesToConsulat.Navigator screenOptions={{ headerShown: false }}>
+    <InvitesToConsulat.Navigator
+      screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <InvitesToConsulat.Screen name="TestScreen2" component={TestTwoScreen} />
     </InvitesToConsulat.Navigator>
   );

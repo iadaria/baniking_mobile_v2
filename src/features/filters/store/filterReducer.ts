@@ -68,7 +68,7 @@ export default function filterReducer(
 
       let changedParams = { ...state[prop], ...params, page: 1 };
       const fields = Object.keys(params) as FieldMain[];
-      fields.forEach((f) => {
+      fields.forEach(f => {
         if (!params[f] || isDelete) {
           delete changedParams[f];
         }
@@ -92,6 +92,12 @@ export default function filterReducer(
         params: { page: 1, city_id: state.params.city_id },
         filterCount: 0,
         isExtra: false,
+      };
+
+    case constants.RESET_PAGE:
+      return {
+        ...state,
+        params: { ...state.params, page: 1 },
       };
 
     // Touching
@@ -123,7 +129,7 @@ export default function filterReducer(
 
     case constants.INIT_EXTRA_PARAMS:
       const initExtraParams = { ...state.params };
-      Object.keys(state.params).map((key) => {
+      Object.keys(state.params).map(key => {
         if (!EXTRA_KEYS.includes(key)) {
           delete initExtraParams[key as keyof IBathBaseParams];
         }
@@ -146,7 +152,7 @@ export default function filterReducer(
 
     case constants.ROLLBACK_EXTRA_PARAMS:
       const baseParams = { ...state.params };
-      Object.keys(baseParams).map((key) => {
+      Object.keys(baseParams).map(key => {
         if (EXTRA_KEYS.includes(key)) {
           delete baseParams[key as keyof IBathBaseParams];
         }

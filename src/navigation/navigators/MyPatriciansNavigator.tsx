@@ -1,11 +1,13 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import TestTwoScreen from '../screens/TestTwoScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const MyPatricians = createNativeStackNavigator();
 
 export default function MyPatriciansNavigator(): JSX.Element {
-  const MyPatricians = createStackNavigator();
   return (
-    <MyPatricians.Navigator screenOptions={{ headerShown: false }}>
+    <MyPatricians.Navigator
+      screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <MyPatricians.Screen name="TestScreen2" component={TestTwoScreen} />
     </MyPatricians.Navigator>
   );

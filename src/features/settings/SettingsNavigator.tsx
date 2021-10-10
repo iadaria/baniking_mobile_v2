@@ -1,5 +1,4 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import {
   SettingsMenuScreen,
   // BaseSettingsScreen,
@@ -10,12 +9,14 @@ import {
   HelpScreen,
 } from './screens';
 import { ProfileScreen } from '../profiles/screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Settings = createStackNavigator();
+const Settings = createNativeStackNavigator();
 
 export default function SettingsNavigator() {
   return (
-    <Settings.Navigator screenOptions={{ headerShown: false }}>
+    <Settings.Navigator
+      screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Settings.Screen
         name="SettingsMenuScreen"
         component={SettingsMenuScreen}

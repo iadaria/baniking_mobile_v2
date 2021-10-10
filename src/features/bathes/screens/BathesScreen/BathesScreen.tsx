@@ -7,23 +7,45 @@ import { Header } from '~/src/app/common/components/Header';
 import { Sorter } from './components/Sorter';
 import { Searcher } from './components/Searcher';
 import { SelectedCity } from './components/SelectedCity';
-import { fetchBathes as fetchBathesAction } from '~/src/features/bathes/store/bathActions';
+import {
+  clearBathes as clearBathesAction,
+  fetchBathes as fetchBathesAction,
+} from '~/src/features/bathes/store/bathActions';
+import { resetPage as resetPageAction } from '~/src/features/filters/store/flterActions';
 import { FilterButton } from './components/FilterButton';
 import { BathesList } from './components/BathesList';
 import { useDetectLocation } from '~/src/app/hooks/useDetectLocation';
 import { IBathBaseParams } from '~/src/app/models/filter';
-
+import { Location } from '~/src/app/models/map';
+/*
+import { ParamListBase } from '@react-navigation/native';
+import { logline } from '~/src/app/utils/debug';
+ */
 interface IProps {
   loading: boolean;
   bathes: Bath[];
   params: Partial<IBathBaseParams> & { page: number };
+  location: Location | null;
   fetchBathes: () => void;
+  clearBathes: () => void;
+  resetPage: () => void;
 }
 
-export function BathesScreenContainer({ params, fetchBathes }: IProps) {
+export function BathesScreenContainer({
+  params,
+  location,
+  fetchBathes,
+  clearBathes,
+  resetPage,
+}: IProps) {
   useEffect(() => {
     fetchBathes();
   }, [fetchBathes, params]);
+
+  useEffect(() => {
+    clearBathes();
+    resetPage();
+  }, [clearBathes, location, resetPage]);
 
   useDetectLocation();
 
@@ -51,13 +73,16 @@ export function BathesScreenContainer({ params, fetchBathes }: IProps) {
 }
 
 const BathesScreenConnected = connect(
-  ({ bath, filter }: IRootState) => ({
+  ({ bath, filter, map }: IRootState) => ({
     loading: bath.loading,
     bathes: bath.bathes,
     params: filter.params,
+    location: map.location,
   }),
   {
     fetchBathes: fetchBathesAction,
+    clearBathes: clearBathesAction,
+    resetPage: resetPageAction,
   },
 )(BathesScreenContainer);
 

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { connect } from 'react-redux';
@@ -20,9 +19,10 @@ import { IRootState } from '~/src/app/store/rootReducer';
 import { IErrors } from '~/src/app/utils/error';
 import { multiplier } from '~/src/app/common/constants';
 import { RegisterPayload } from '../../store/saga/registerPhoneSaga';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface IProps {
-  navigation: StackNavigationProp<ParamListBase>;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   phoneRegister: (payload: RegisterPayload) => void;
   errors: IErrors | null;
 }
