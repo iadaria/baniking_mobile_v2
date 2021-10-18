@@ -8,8 +8,9 @@ import { showAlert } from '~/src/app/common/components/showAlert';
 import RNFS from 'react-native-fs';
 import { colors, sizes } from '~/src/app/common/constants';
 import RNQRGenerator, { QRCodeGenerateOptions } from 'rn-qr-generator';
-import { numberWithSpaces } from '../../../../app/utils/system';
+import { isIOS, numberWithSpaces } from '../../../../app/utils/system';
 import { log, logline } from '~/src/app/utils/debug';
+import { getQrImage } from '~/src/app/utils/bathUtility';
 
 interface IResult {
   qr: string;
@@ -22,32 +23,37 @@ function* getQrCode() {
     const qr_data = qr.split('data:image/png;base64,');
 
     if (qr_data.length > 0 && qr_data[1]) {
-      // Расшифровываем данные получение в виде qr  изображения
-      const { values } = yield RNQRGenerator.detect({ base64: qr_data[1] });
-      logline('', { values });
+      if (isIOS) {
+        // Расшифровываем данные получение в виде qr  изображения
+        const { values } = yield RNQRGenerator.detect({ base64: qr_data[1] });
+        logline('', { values });
 
-      // Создаем стиль для нашего qr кода - размер, цвет
-      const qrOptions: QRCodeGenerateOptions = {
-        value: JSON.stringify(values),
-        backgroundColor: colors.primary,
-        color: colors.secondary,
-        height: wp(sizes.qr.main),
-        width: wp(sizes.qr.main),
-        correctionLevel: 'H',
-      };
-      // Генерируем новывй qr с нужным стилем и получаем ссылку на изображение в кэше
-      const { uri } = yield RNQRGenerator.generate(qrOptions);
+        // Создаем стиль для нашего qr кода - размер, цвет
+        const qrOptions: QRCodeGenerateOptions = {
+          value: JSON.stringify(values),
+          backgroundColor: colors.primary,
+          color: colors.secondary,
+          height: wp(sizes.qr.main),
+          width: wp(sizes.qr.main),
+          correctionLevel: 'H',
+        };
+        // Генерируем новывй qr с нужным стилем и получаем ссылку на изображение в кэше
+        const { uri } = yield RNQRGenerator.generate(qrOptions);
 
-      // Проверяем есть ли сгенерированный qr в кэше
-      const exists: boolean = yield RNFS.exists(uri);
-      if (exists) {
-        yield put(
-          setQrCode({
-            qr: uri,
-            qrValue: values,
-            cardNumber: numberWithSpaces(values[0]),
-          }),
-        );
+        // Проверяем есть ли сгенерированный qr в кэше
+        const exists: boolean = yield RNFS.exists(uri);
+        if (exists) {
+          yield put(
+            setQrCode({
+              qr: uri,
+              qrValue: values,
+              cardNumber: numberWithSpaces(values[0]),
+            }),
+          );
+        }
+      } else {
+        const file: string = yield getQrImage(qr);
+        yield put(setQrCode({ qr: file, qrValue: '', cardNumber: '' }));
       }
     }
     yield put(cabinetDataFail(null));

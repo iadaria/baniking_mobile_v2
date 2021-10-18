@@ -15,7 +15,7 @@ export default function BathesNavigator() {
 
   return (
     <Bathes.Navigator
-      //initialRouteName={tab.DestinationMap}
+      //initialRouteName={tab.}
       screenOptions={{
         headerShown: false,
         orientation: 'portrait',

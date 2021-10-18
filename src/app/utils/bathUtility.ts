@@ -14,8 +14,21 @@ import {
 import { IPersistImage } from '../models/persist';
 import { getFileName, replaceExtension } from './common';
 import { ISchedule } from '~/src/app/models/bath';
-import { logline } from './debug';
+import { log, logline } from './debug';
 import { EXTRA_KEYS, IBathExtraParams } from '../models/filter';
+
+export async function getQrImage(base64: string) {
+  logline('', 'getQrImage');
+  const { uri }: Response = await ImageResizer.createResizedImage(
+    base64,
+    50,
+    50,
+    'PNG',
+    100,
+  );
+  log('', { uri });
+  return uri;
+}
 
 export function checkPhoto(photo: string): string | null {
   const formats = ['jpg', 'png', 'jpeg', 'JPG', 'PNG', 'JPEG'];
