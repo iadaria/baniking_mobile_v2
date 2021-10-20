@@ -130,8 +130,8 @@ android {
         applicationId "com.baniking_mobile_v2"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 103
+        versionName "1.0.3"
     }
     splits {
         abi {

@@ -14,9 +14,10 @@ export const styles = StyleSheet.create({
   backButton: {
     position: 'absolute',
     top: wp(5),
-    left: wp(3),
+    left: wp(5),
     zIndex: 3,
     backgroundColor: 'rgba(126, 126, 126, 0.8)',
-    padding: wp(3),
+    alignItems: 'center',
+    paddingLeft: wp(3),
   },
 });
