@@ -57,3 +57,12 @@ export function phoneFormat(phone: string): string {
   }
   return phone;
 }
+
+export function parseNumberCard(value: string): string {
+  const match = value.match(/\d+ \d+ \d+ \d+/);
+  console.log(match);
+  if (match && match.length >= 1) {
+    return match[0];
+  }
+  return value;
+}

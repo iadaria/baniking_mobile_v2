@@ -28,7 +28,8 @@ export function isAllowedImageType(type: string) {
   return types.includes(type);
 }
 
-export const getSex = (_sex: number) => (_sex === Sex.Male ? Sex.Male : Sex.Female);
+export const getSex = (_sex: number) =>
+  _sex === Sex.Male ? Sex.Male : Sex.Female;
 
 export function numberWithSpaces(x: Number) {
   var parts = x.toString().split('.');
@@ -40,7 +41,17 @@ export function formatPhoneNumber(phoneNumberString: string) {
   var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
   var match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
   if (match) {
-    return match[1] + ' (' + match[2] + ') ' + match[3] + '-' + match[4] + '-' + match[5];
+    return (
+      match[1] +
+      ' (' +
+      match[2] +
+      ') ' +
+      match[3] +
+      '-' +
+      match[4] +
+      '-' +
+      match[5]
+    );
   }
   return null;
 }

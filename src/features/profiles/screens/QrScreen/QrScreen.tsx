@@ -58,9 +58,11 @@ export function QrScreenContainer({
       <AppText margin={[6, 0, 0.5]} semibold size={sizes.text.label} center>
         Номер карты
       </AppText>
-      <AppInput style={styles.input} center>
-        {cardNumber}
-      </AppInput>
+      {!!cardNumber && (
+        <AppInput style={styles.input} center editable={false}>
+          {cardNumber}
+        </AppInput>
+      )}
     </Block>
   );
 }

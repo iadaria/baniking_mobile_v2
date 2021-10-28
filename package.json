@@ -38,7 +38,8 @@
     "ios-bundle": "react-native bundle --entry-file index.js --bundle-output ios/baniking_mobile/main.jsbundle --dev false --platform ios --assets-dest ios/baniking_mobile",
     "ios-release": "npx react-native run-ios --configuration Release",
     "ios-debug": "npx react-native run-ios --configuration Debug",
-    "test-phone": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch phoneFormat.test.ts  --no-cache"
+    "test-phone": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch phoneFormat.test.ts  --no-cache",
+    "test-parse": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch parseCardNumber.test.ts  --no-cache"
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",

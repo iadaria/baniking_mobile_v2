@@ -11,6 +11,7 @@ import RNQRGenerator, { QRCodeGenerateOptions } from 'rn-qr-generator';
 import { isIOS, numberWithSpaces } from '../../../../app/utils/system';
 import { log, logline } from '~/src/app/utils/debug';
 import { getQrImage } from '~/src/app/utils/bathUtility';
+import { parseNumberCard } from '~/src/app/utils/common';
 
 interface IResult {
   qr: string;
@@ -47,7 +48,7 @@ function* getQrCode() {
             setQrCode({
               qr: uri,
               qrValue: values,
-              cardNumber: numberWithSpaces(values[0]),
+              cardNumber: parseNumberCard(values[0]),
             }),
           );
         }

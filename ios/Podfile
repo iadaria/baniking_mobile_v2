@@ -25,7 +25,6 @@ target 'baniking_mobile_v2' do
   pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts"
   pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
 
-  pod 'RNQrGenerator', :path => '../node_modules/rn-qr-generator'
 
   target 'baniking_mobile_v2Tests' do
     inherit! :complete
