@@ -1,26 +1,22 @@
-# Приложение на React Native 
+# React Native app
 
-На изображении скрины реального приложения
+Images from the real app
 ![dsfNative](/readme/bani2.png)
 
-### Описание приложения
-Приложение для поиска информации о банях, а также для возможности заказать звонок, зарезервировать посещение, есть личный кабинет и инофорация о посещениях, баллах и накопительной скидке.
+### App description
+The application for searching information about bathhouses, as well as the ability to order a call, book a visit, there is a personal account and reviews, scores and discounts.
 
-### Особенности и средства реализации:
-1. Авторизация через социальные сети: facebook, google, vk, yandex;
-2. Т.к для react-native нет yandex-модуля авторизации, был написан модуль на Swift/Objective-C/Java;
-3. Определение геолокации, Google map для определения дистанции до объекта и маршрута
-4. Работа с Qr кодом
-5. Анимация для слайдера и отображения карточек для плавного перехода
-6. Работа с кэшем - т/к некачествнный бэк посылает изображения размером и разрешением не пригодным для мобильного приложения, я его асинхронно редактирую, временно подставляя не тяжелокую картинку, и сохраняю в кэш
+ ### Features and means of implementation:
+1. authorization via social networks: facebook, google, vk, yandex;
+2. Since there is no yandex authorization module for react-native, a module was written in Swift/Objective-C/Java;
+3. Geolocation detection, Google map to determine the distance to the object and the route;
+4. Work with Qr code;
+5. Animation for slider and card display for smooth transition;
 
-
-### Анимация, работа с изображениями
-
+### Animation and working with images
 
 ![Amimation](/readme/bani1.gif) 
 
-### Работа с картой google map
-
+### Working with Goole map API
 
 ![GoogleMap](/readme/bani2.gif) 
